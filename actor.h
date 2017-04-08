@@ -2,8 +2,6 @@
 #define ACTOR_H
 #include "sprite.h"
 #include "cgameengine.h"
-//#include <QBasicTimer>
-//#include <QElapsedTimer>
 #include <QGraphicsSceneMouseEvent>
 #include <QPointer>
 
