@@ -47,7 +47,7 @@ void MainWindow::createScene() {
     m_console->hide();
     scene()->gameengine()->mediaplayer()->setPlaylist(scene()->gameengine()->mediaplaylist());
     scene()->gameengine()->mediaplayer()->setVolume(5);
-
+    connect(m_console,&CConsoleWidget::signalText,this,&MainWindow::addText);
     connect(timer(), &QTimer::timeout, scene(), &CTileScene::advance);
     connect(timer(), &QTimer::timeout, scene(), &CTileScene::actorCollision);
 }
@@ -194,16 +194,9 @@ void MainWindow::addMountain() {
 void MainWindow::addConsole() {
     m_console->show();
     m_console->textedit()->setFocus();
-    //QPointer<CConsoleWidget>((CConsoleWidget*)m_console)->textedit()->setFocus();
 }
 
 void MainWindow::addStream() {
-    /*
-    SpritePointer sprite = scene()->addSprite("tree01","stationary",false);
-    sprite->setZValue(-100);
-    connect(sprite,&Sprite::spriteClick,this,&MainWindow::actorClicked);
-    connect(sprite,&Sprite::spriteClick,scene(),&CTileScene::spriteSelected);
-    */
     QLineEdit *edit = new QLineEdit();
     QGraphicsProxyWidget *widgetproxy = scene()->addWidget(edit);
 
@@ -211,6 +204,11 @@ void MainWindow::addStream() {
     widgetproxy->setFlag(QGraphicsItem::ItemIsMovable); // this and
     widgetproxy->setFlag(QGraphicsItem::ItemIsFocusable); // this
 
+}
+
+void MainWindow::addText(const char *s) {
+   ActorPointer actor = ActorPointer((Actor*)current_sprite());
+   actor << QString(s);
 }
 
 SceneActor *MainWindow::addActor(const QString& name) {

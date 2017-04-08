@@ -14,8 +14,10 @@ public:
     QTextEdit *textedit() const;
 
 signals:
+    void signalText(const char*);
 
 public slots:
+    void sendText();
 };
 
 #endif // CCONSOLEWIDGET_H

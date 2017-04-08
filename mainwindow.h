@@ -54,6 +54,7 @@ public slots:
     void addMountain();
     void addConsole();
     void addStream();
+    void addText(const char *);
     void spriteDown();
     void spriteLeft();
     void spriteRight();
