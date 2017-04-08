@@ -1,0 +1,45 @@
+{
+    "name" : "scheusal",
+    "fullname" : "The Scheusal",
+    "spritesheet" : ":/assets/images/skeleton_03.png",
+    "image_properties" : {
+            "width" : 832,
+            "height" : 1344,
+            "columns" : 13,
+            "rows" : 21,
+            "sprite_width" : 64,
+            "sprite_height" : 64
+
+    },
+    "friends" : ["monster","scheusal"],
+    "foes" : ["hero","male_villager","female_villager","villager"],
+    "actions" : ["spell_cast","thrust","walking","slashing","shooting","hurt"],
+    "directions" : ["down","left","right","up"],
+    "primary_fight_action" : "shooting",
+    "sprite_pages": {
+        "spell_cast_up" : {"row" : 0,"col":0, "cells" : 7},
+        "spell_cast_left" : {"row" : 1,"col":0, "cells" : 7},
+        "spell_cast_down" : {"row" : 2,"col":0, "cells" : 7},
+        "spell_cast_right" : {"row" : 3,"col":0, "cells" : 7},
+        "thrust_up" : {"row" : 4,"col":0, "cells" : 8},
+        "thrust_left" : {"row" : 5,"col":0, "cells" : 8},
+        "thrust_down" : {"row" : 6,"col":0, "cells" : 8},
+        "thrust_right" : {"row" : 7,"col":0, "cells" : 8},
+        "walking_up" : {"row" : 8,"col":0, "cells" : 9},
+        "walking_left" : {"row" : 9,"col":0, "cells" : 9},
+        "walking_down" : {"row" : 10,"col":0, "cells" : 9},
+        "walking_right" : {"row" : 11,"col":0, "cells" : 9},
+        "slashing_up" : {"row" : 12,"col":0, "cells" : 6},
+        "slashing_left" : {"row" : 13,"col":0, "cells" : 6},
+        "slashing_down" : {"row" : 14,"col":0, "cells" : 6},
+        "slashing_right" : {"row" : 15,"col":0, "cells" : 6},
+        "shooting_up" : {"row" : 16,"col":0, "cells" : 13},
+        "shooting_left" : {"row" : 17,"col":0, "cells" : 13},
+        "shooting_down" : {"row" : 18,"col":0, "cells" : 13},
+        "shooting_right" : {"row" : 19,"col":0, "cells" : 13},
+        "hurt_up" : {"row" : 20,"col":0, "cells" : 6},
+        "hurt_left" : {"row" : 20,"col":0, "cells" : 6},
+        "hurt_down" : {"row" : 20,"col":0, "cells" : 6},
+        "hurt_right" : {"row" : 20,"col":0, "cells" : 6}
+    }
+}

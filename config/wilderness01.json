@@ -1,0 +1,26 @@
+{
+    "name" : "mountain",
+    "description" : "A Moutain",
+    "spritesheet" : ":/assets/images/wilderness_stream.png",
+    "image_properties" : {
+            "width" : 256,
+            "height" : 183,
+            "columns" : 1,
+            "rows" : 1,
+            "sprite_width" : 256,
+            "sprite_height" : 183
+
+    },
+    "friends" : ["hero","male_villager","female_villager","villager"],
+    "foes" : ["monster","scheusal"],
+    "actions" : ["stationary"],
+    "directions" : ["down","left","right","up"],
+    "primary_fight_action" : "none",
+    "sprite_pages": {
+        "mountain_stationary_down" : {"row" : 0, "col" : 0,"cells" : 1},
+        "mountain_stationary_left" : {"row" : 0, "col" : 0,"cells" : 1},
+        "mountain_stationary_right" : {"row" : 0, "col" : 0,"cells" : 1},
+        "mountain_stationary_up" : {"row" : 0, "col" : 0,"cells" : 1}
+    }
+
+}

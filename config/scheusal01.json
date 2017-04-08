@@ -1,0 +1,37 @@
+{
+    "name" : "scheusal",
+    "fullname" : "The Scheusal",
+    "spritesheet" : ":/assets/images/skeleton_01.png",
+    "image_properties" : {
+            "width" : 832,
+            "height" : 1344,
+            "columns" : 13,
+            "rows" : 21,
+            "sprite_width" : 64,
+            "sprite_height" : 64
+
+    },
+    "sprite_pages": {
+        "spell_cast_up" : {"row" : 0, "cells" : 7},
+        "spell_cast_left" : {"row" : 1, "cells" : 7},
+        "spell_cast_down" : {"row" : 2, "cells" : 7},
+        "spell_cast_right" : {"row" : 3, "cells" : 7},
+        "thrust_up" : {"row" : 4, "cells" : 8},
+        "thrust_left" : {"row" : 5, "cells" : 8},
+        "thrust_down" : {"row" : 6, "cells" : 8},
+        "thrust_right" : {"row" : 7, "cells" : 8},
+        "walking_up" : {"row" : 8, "cells" : 9},
+        "walking_left" : {"row" : 9, "cells" : 9},
+        "walking_down" : {"row" : 10, "cells" : 9},
+        "walking_right" : {"row" : 11, "cells" : 9},
+        "slashing_up" : {"row" : 12, "cells" : 6},
+        "slashing_left" : {"row" : 13, "cells" : 6},
+        "slashing_down" : {"row" : 14, "cells" : 6},
+        "slashing_right" : {"row" : 15, "cells" : 6},
+        "shooting_up" : {"row" : 16, "cells" : 13},
+        "shooting_left" : {"row" : 17, "cells" : 13},
+        "shooting_down" : {"row" : 18, "cells" : 13},
+        "shooting_right" : {"row" : 19, "cells" : 13},
+        "hurt" : {"row" : 20, "cells" : 6}
+    }
+}
