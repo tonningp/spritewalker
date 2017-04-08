@@ -119,16 +119,16 @@ QAction *MainWindow::createAction(const QString &menu, const QKeySequence &short
 
 #include<QDebug>
 void MainWindow::newFile() {
-    qDebug() << "newFile";
+    qDebug() << "TODO: newFile";
 }
 
 void MainWindow::openFile() {
-    qDebug() << "openFile";
+    qDebug() << "TODO: openFile";
 }
 
 void MainWindow::saveFile()
 {
-    qDebug() << "saveFile";
+    qDebug() << "TODO: saveFile";
 
 }
 
@@ -160,7 +160,6 @@ void MainWindow::changeVolume(int v) {
 void MainWindow::drawScene() {
     auto bkg = scene()->setBackgroundImageByName("background01");
     bkg->setPos(-1*scene()->sceneRect().height()/2-175, -1*scene()->sceneRect().height()/2);
-    //bkg->hide();
     bkg->setZValue(-1000);
 }
 
@@ -216,7 +215,6 @@ SceneActor *MainWindow::addActor(const QString& name) {
     connect(actor,&Sprite::spriteClick,this,&MainWindow::actorClicked);
     connect(actor,&Sprite::spriteClick,scene(),&CTileScene::spriteSelected);
     connect(actor,&Sprite::spriteMove,this,&MainWindow::updateSpritePosition);
-    //QObject::connect(timer(),SIGNAL(timeout()),actor,SLOT(animate()));
     return actor;
 }
 
