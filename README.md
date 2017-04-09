@@ -5,15 +5,11 @@
 
 This project is a base for creating sprite based top down 2d games using the Qt c++ framework
 
-## Code Examples
-
-TBD
 
 ## Motivation
 
-TBD
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+C++ is a relatively "old" language, but it is still often the first real strong typeed procedural language that students encounter in computer science.  Most c++ projects in even modern textbooks are geared to console or command line programming.  This project has a goal of providing a code base for gui programming.  It is built using the Qt 5 framework.
 
 ## Installation
 
@@ -31,6 +27,10 @@ Depending on the size of the project, if it is small and simple enough the refer
 
 TBD
 Describe and show how to run the tests with code examples.
+
+## Code Examples
+
+TBD
 
 ## Contributors
 
