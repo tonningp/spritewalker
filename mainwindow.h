@@ -13,7 +13,6 @@
 namespace Ui {
 class MainWindow;
 }
-
 enum KeyState {KEY_UP,KEY_DOWN};
 class MainWindow : public QMainWindow
 {
@@ -52,9 +51,9 @@ public slots:
     void addMonster();
     void addScheusal();
     void addMountain();
-    void addConsole();
+    void showConsole();
     void addStream();
-    void addText(const char *);
+    void consoleText(const char *);
     void spriteDown();
     void spriteLeft();
     void spriteRight();
@@ -86,7 +85,10 @@ protected slots:
 private:
     Ui::MainWindow *ui;
     void setupTimer();
-    void addMelba();
+
+    void showMelba();
+    void showSpace();
+
     void setupStatusLabel();
     void createMenus();
     QAction* createAction(const QString& menu,const QKeySequence&,const QString& tip);

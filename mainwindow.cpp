@@ -9,18 +9,20 @@
 #include "cactordialog.h"
 #include "actor.h"
 #include "cgameengine.h"
+#include "scenemanager.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    m_current_sprite(NULL)
+    m_current_sprite(NULL),
+    m_scene(NULL)
 
 {
     ui->setupUi(this);
     createMenus();
-    //createScene();
-    //spawnAll();
+    setupStatusLabel();
+    setupTimer();
 
 }
 
@@ -30,26 +32,24 @@ MainWindow::~MainWindow() {
 
 void MainWindow::setupTimer() {
     timer(new QTimer);
-    QObject::connect(timer(), SIGNAL(timeout()), this, SLOT(updateGameStatus()));
+    //QObject::connect(timer(), SIGNAL(timeout()), this, SLOT(updateGameStatus()));
+    timer()->start(100);
 }
 
-void MainWindow::addMelba() {
-    setupTimer();
-    scene(new CTileScene(new mfg::Engine,this,QRectF(-475,-300,950,600)));
-    scene()->setItemIndexMethod(QGraphicsScene::NoIndex);
-    scene()->setBackgroundBrush(Qt::blue);
+void MainWindow::showMelba() {
+    if(scene() == NULL) {
+        mfg::Engine *ge = new mfg::Engine;
+        scene(ge->sceneManager()->createScene("melba01",this));
+    }
     ui->graphicsView->setScene(scene());
-    drawScene();
-    m_console = new CConsoleWidget;
-    scene()->addWidget(m_console)->setFlag(QGraphicsItem::ItemIsFocusable);
-    m_console->hide();
-    scene()->gameengine()->mediaplayer()->setPlaylist(scene()->gameengine()->mediaplaylist());
-    scene()->gameengine()->mediaplayer()->setVolume(5);
-    connect(m_console,&CConsoleWidget::signalText,this,&MainWindow::addText);
-    connect(timer(), &QTimer::timeout, scene(), &CTileScene::advance);
-    connect(timer(), &QTimer::timeout, scene(), &CTileScene::actorCollision);
-    setupStatusLabel();
-    timer()->start(30);
+}
+
+void MainWindow::showSpace() {
+    if(scene() == NULL) {
+        mfg::Engine *ge = new mfg::Engine;
+        scene(ge->sceneManager()->createScene("space01",this));
+    }
+    ui->graphicsView->setScene(scene());
 }
 
 void MainWindow::setupStatusLabel() {
@@ -105,12 +105,12 @@ void MainWindow::createMenus()
 
     menu = menuBar()->addMenu(tr("&Widget"));
     action = createAction("&Console",QKeySequence(tr("Alt+Ctrl+C","Widget | Console")),"Show Console Widget");
-    connect(action,&QAction::triggered,this,&MainWindow::addConsole);
+    connect(action,&QAction::triggered,this,&MainWindow::showConsole);
     menu->addAction(action);
 
     menu = menuBar()->addMenu(tr("Sc&enes"));
     action = createAction("Legend of Melba",QKeySequence(tr("Alt+Ctrl+L","Scene | Melba")),"Show the melba scene");
-    connect(action,&QAction::triggered,this,&MainWindow::addMelba);
+    connect(action,&QAction::triggered,this,&MainWindow::showMelba);
     menu->addAction(action);
 
 }
@@ -195,9 +195,9 @@ void MainWindow::addMountain() {
     connect(sprite,&Sprite::spriteClick,scene(),&CTileScene::spriteSelected);
 }
 
-void MainWindow::addConsole() {
-    m_console->show();
-    m_console->textedit()->setFocus();
+void MainWindow::showConsole() {
+    scene()->console()->show();
+    scene()->console()->textedit()->setFocus();
 }
 
 void MainWindow::addStream() {
@@ -210,7 +210,7 @@ void MainWindow::addStream() {
 
 }
 
-void MainWindow::addText(const char *s) {
+void MainWindow::consoleText(const char *s) {
    ActorPointer actor = ActorPointer((Actor*)current_sprite());
    actor << QString(s);
 }
@@ -219,7 +219,7 @@ SceneActor *MainWindow::addActor(const QString& name) {
     ActorPointer actor = scene()->addActor(name,"walking",false);
     connect(actor,&Sprite::spriteClick,this,&MainWindow::actorClicked);
     connect(actor,&Sprite::spriteClick,scene(),&CTileScene::spriteSelected);
-    connect(actor,&Sprite::spriteMove,this,&MainWindow::updateSpritePosition);
+    //connect(actor,&Sprite::spriteMove,this,&MainWindow::updateSpritePosition);
     return actor;
 }
 
@@ -309,14 +309,16 @@ void MainWindow::timer(QTimer *timer) {
 
 
 void MainWindow::updateGameStatus() {
-    ActorCountMap actor_count_map = scene()->getActorCounts();
-    ui->lbl_hero_count->setText(QString::number(actor_count_map["hero"]));
-    ui->lbl_monster_count->setText(QString::number(actor_count_map["monster"]));
-    ui->lbl_villager_count->setText(QString::number(actor_count_map["female_villager"]+actor_count_map["male_villager"]));
-    ui->lbl_scheusal_count->setText(QString::number(actor_count_map["scheusal"]));
-    ui->lbl_deadcount->setText(QString::number(scene()->deadCount()));
-    ui->lbl_timer_interval->setText(QString::number(timer()->interval()));
-    scene()->clearDead();
+    if(scene()) {
+        ActorCountMap actor_count_map = scene()->getActorCounts();
+        ui->lbl_hero_count->setText(QString::number(actor_count_map["hero"]));
+        ui->lbl_monster_count->setText(QString::number(actor_count_map["monster"]));
+        ui->lbl_villager_count->setText(QString::number(actor_count_map["female_villager"]+actor_count_map["male_villager"]));
+        ui->lbl_scheusal_count->setText(QString::number(actor_count_map["scheusal"]));
+        ui->lbl_deadcount->setText(QString::number(scene()->deadCount()));
+        ui->lbl_timer_interval->setText(QString::number(timer()->interval()));
+        scene()->clearDead();
+    }
 }
 
 Sprite *MainWindow::current_sprite() const

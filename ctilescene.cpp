@@ -1,15 +1,50 @@
 #include <QTimer>
+#include "actor.h"
+#include "cgameengine.h"
+#include "cconsolewidget.h"
 #include "ctilescene.h"
+#include "scenemanager.h"
 #include "cutilities.h"
 
 
-CTileScene::CTileScene(mfg::Engine* gameengine,QObject *parent,const QRectF &rect) :
+CTileScene::CTileScene(SceneManager* sm,QObject *parent,const QRectF &rect) :
     QGraphicsScene(parent),
-    m_game_engine(gameengine),
-    m_current_sprite(NULL)
+    m_scene_manager(sm),
+    m_current_sprite(NULL),
+    m_timer(new QTimer),
+    m_console(new CConsoleWidget)
 {
+    this->addWidget(m_console);
+    m_console->hide();
     this->setSceneRect(rect);
     drawGrid();
+    connect(m_timer, &QTimer::timeout, this, &CTileScene::advance);
+    connect(m_timer, &QTimer::timeout, this, &CTileScene::actorCollision);
+    QObject::connect(m_console, SIGNAL(signalText(const char*)), parent, SLOT(consoleText(const char*)));
+    timer()->start(30);
+}
+
+SceneManager *CTileScene::scene_manager() const
+{
+    return m_scene_manager;
+}
+
+void CTileScene::scene_manager(SceneManager *scene_manager)
+{
+    m_scene_manager = scene_manager;
+}
+
+QTimer *CTileScene::timer() {
+    return m_timer;
+}
+
+mfg::Engine *CTileScene::gameengine()
+{
+    return scene_manager()->game_engine();
+}
+
+CConsoleWidget *CTileScene::console() {
+    return m_console;
 }
 
 void CTileScene::drawGrid() {
@@ -69,8 +104,9 @@ QTime CTileScene::current_time() {
 }
 
 QGraphicsItem *CTileScene::setBackgroundImageByName(const QString &name) {
-   return addPixmap(*(gameengine()->pixMap(name)));
+    return addPixmap(*(gameengine()->pixMap(name)));
 }
+
 
 ActorCountMap CTileScene::getActorCounts() {
     ActorCountMap actor_count_map;

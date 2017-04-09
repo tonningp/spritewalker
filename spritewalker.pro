@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     sequentialguid.cpp \
     lineeditwidget.cpp \
     cconsolewidget.cpp \
-    ckeypressconsumer.cpp
+    ckeypressconsumer.cpp \
+    scenemanager.cpp
 
 HEADERS  += mainwindow.h \
     sprite.h \
@@ -54,7 +55,8 @@ HEADERS  += mainwindow.h \
     sequentialguid.h \
     lineeditwidget.h \
     cconsolewidget.h \
-    ckeypressconsumer.h
+    ckeypressconsumer.h \
+    scenemanager.h
 
 FORMS    += mainwindow.ui \
     cactordialog.ui

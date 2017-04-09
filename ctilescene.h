@@ -4,9 +4,17 @@
 #include <QGraphicsItem>
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
-#include "cgameengine.h"
-#include "actor.h"
+#include <QTime>
 
+namespace mfg {
+    class Engine;
+};
+class Sprite;
+class Actor;
+class SceneManager;
+class CConsoleWidget;
+typedef Actor SceneActor;
+typedef QList<SceneActor*> ActorList;
 typedef QMap<QString,int> ActorCountMap;
 typedef QList<QGraphicsItem*> GraphicsItemList;
 
@@ -15,11 +23,14 @@ class CTileScene : public QGraphicsScene
     Q_OBJECT
     Sprite* m_current_sprite;
     mfg::Engine *m_game_engine;
+    SceneManager *m_scene_manager;
     GraphicsItemList m_deadlist;
     QTime m_current_time;
+    QTimer *m_timer;
+    CConsoleWidget *m_console;
 
 public:
-    explicit CTileScene(mfg::Engine* gameengine,QObject *parent = 0,const QRectF &rect=QRectF(-300,-300,600,600));
+    explicit CTileScene(SceneManager* sm,QObject *parent = 0,const QRectF &rect=QRectF(-300,-300,600,600));
     void connectTimer(QTimer*);
     void drawGrid();
     void addItem(QGraphicsItem* item,const QString &name);
@@ -35,11 +46,17 @@ public:
     void clearDead();
     bool isSceneActor(QGraphicsItem* item);
     void clearActors();
-    mfg::Engine* gameengine() {return m_game_engine;}
     GraphicsItemList getDeadlist() const;
     void setDeadlist(const GraphicsItemList &deadlist);
     QTime current_time();
     QGraphicsItem* setBackgroundImageByName(const QString& name);
+    mfg::Engine *gameengine();
+    CConsoleWidget *console();
+
+    SceneManager *scene_manager() const;
+    void scene_manager(SceneManager *scene_manager);
+
+    QTimer *timer();
 
 protected slots:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent) override;

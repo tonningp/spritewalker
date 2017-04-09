@@ -7,6 +7,7 @@
 #include <QUrl>
 #include <QVector>
 #include "assetmanager.h"
+#include "scenemanager.h"
 
 class CRuleSet;
 namespace mfg {
@@ -21,6 +22,7 @@ typedef QMap<QString,QPixmap*> PixmapMap;
 
 class Engine {
     QScriptEngine *m_script_engine;
+    SceneManager *m_scene_manager;
     RuleMap m_actor_rules;
     AssetManagerMap m_assets;
     PixmapMap m_pixmaps;
@@ -50,6 +52,8 @@ public:
     void setMediaPlayer(QMediaPlayer *player);
     QMediaPlaylist *mediaplaylist() const;
     void setPlaylist(QMediaPlaylist *playlist);
+    SceneManager *sceneManager() const;
+    void setSceneManager(SceneManager *sceneManager);
 };
 
 };

@@ -6,13 +6,13 @@
 
 using namespace mfg;
 
-
 Engine::Engine() {
     m_script_engine = new QScriptEngine;
+    m_scene_manager = new SceneManager(this);
     buildAssetMap();
     buildActorRules();
     buildPixmaps();
-
+    
     //qDebug() << scriptengine()->evaluate("function testf(v1){  return v1*2;};testf(10);").toNumber();
     addPixmap("background01",new QPixmap(":/assets/images/background_01.png"));
     m_player = new QMediaPlayer;
@@ -20,6 +20,16 @@ Engine::Engine() {
     m_playlist->addMedia(audioFile("fantasy01"));
     m_playlist->setPlaybackMode(QMediaPlaylist::Loop);
 
+}
+
+SceneManager *Engine::sceneManager() const
+{
+    return m_scene_manager;
+}
+
+void Engine::setSceneManager(SceneManager *scene_manager)
+{
+    m_scene_manager = scene_manager;
 }
 
 QMediaPlaylist *Engine::mediaplaylist() const
