@@ -9,7 +9,7 @@ This project is a base for creating sprite based top down 2d games using the Qt 
 ## Motivation
 
 
-C++ is a relatively "old" language, but it is still often the first real strong typeed procedural language that students encounter in computer science.  Most c++ projects in even modern textbooks are geared to console or command line programming.  This project has a goal of providing a code base for gui programming.  It is built using the Qt 5 framework.
+C++ is a relatively "old" language, but it is still often the first real strong typed procedural language that students encounter in computer science.  Most c++ projects in even modern textbooks are geared to console or command line programming.  This project has a goal of providing a code base for gui programming.  It is built using the Qt 5 framework.
 
 ## Installation
 
