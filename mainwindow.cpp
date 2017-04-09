@@ -40,7 +40,7 @@ void MainWindow::setupTimer() {
 void MainWindow::createScene() {
     scene(new CTileScene(new mfg::Engine,this,QRectF(-475,-300,950,600)));
     scene()->setItemIndexMethod(QGraphicsScene::NoIndex);
-    scene()->setBackgroundBrush(Qt::black);
+    scene()->setBackgroundBrush(Qt::blue);
     ui->graphicsView->setScene(scene());
     drawScene();
     m_console = new CConsoleWidget;
