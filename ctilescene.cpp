@@ -7,6 +7,7 @@
 #include "cutilities.h"
 
 
+
 CTileScene::CTileScene(SceneManager* sm,QObject *parent,const QRectF &rect) :
     QGraphicsScene(parent),
     m_scene_manager(sm),
@@ -22,6 +23,16 @@ CTileScene::CTileScene(SceneManager* sm,QObject *parent,const QRectF &rect) :
     connect(m_timer, &QTimer::timeout, this, &CTileScene::actorCollision);
     QObject::connect(m_console, SIGNAL(signalText(const char*)), parent, SLOT(consoleText(const char*)));
     timer()->start(30);
+}
+
+QString CTileScene::name() const
+{
+    return m_name;
+}
+
+void CTileScene::setName(const QString &name)
+{
+    m_name = name;
 }
 
 SceneManager *CTileScene::scene_manager() const

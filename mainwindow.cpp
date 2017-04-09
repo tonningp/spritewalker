@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     createMenus();
     setupStatusLabel();
     setupTimer();
+    showMelba();
 
 }
 
@@ -37,19 +38,26 @@ void MainWindow::setupTimer() {
 }
 
 void MainWindow::showMelba() {
-    if(scene() == NULL) {
-        mfg::Engine *ge = new mfg::Engine;
-        scene(ge->sceneManager()->createScene("melba01",this));
-    }
-    ui->graphicsView->setScene(scene());
+    showScene("melba01");
 }
 
 void MainWindow::showSpace() {
-    if(scene() == NULL) {
-        mfg::Engine *ge = new mfg::Engine;
-        scene(ge->sceneManager()->createScene("space01",this));
+    showScene("space01");
+}
+
+void MainWindow::showScene(const QString &name) {
+    if(scene() == NULL || scene()->name() != name) {
+        if(scene() == NULL) {
+            mfg::Engine *ge = new mfg::Engine;
+            ge->sceneManager()->createScene(name,this);
+            scene(ge->sceneManager()->getScene(name));
+        }
+        else if(scene()->gameengine()->sceneManager()->getScene(name) == NULL) {
+            scene()->gameengine()->sceneManager()->createScene(name,this);
+        }
     }
-    ui->graphicsView->setScene(scene());
+    scene(scene()->gameengine()->sceneManager()->getScene(name));
+    ui->graphicsView->setScene(scene()->gameengine()->sceneManager()->getScene(name));
 }
 
 void MainWindow::setupStatusLabel() {
@@ -111,6 +119,9 @@ void MainWindow::createMenus()
     menu = menuBar()->addMenu(tr("Sc&enes"));
     action = createAction("Legend of Melba",QKeySequence(tr("Alt+Ctrl+L","Scene | Melba")),"Show the melba scene");
     connect(action,&QAction::triggered,this,&MainWindow::showMelba);
+    menu->addAction(action);
+    action = createAction("Space Scene",QKeySequence(tr("Alt+Ctrl+S","Scene | Space")),"Show the space scene");
+    connect(action,&QAction::triggered,this,&MainWindow::showSpace);
     menu->addAction(action);
 
 }

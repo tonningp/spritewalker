@@ -43,6 +43,7 @@ public:
     void status_label(QLabel *status_label);
     CConsoleWidget *console() const;
 
+    void showScene(const QString &name);
 public slots:
     void drawScene();
     void addMaleVillager();

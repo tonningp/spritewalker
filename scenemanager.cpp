@@ -13,6 +13,7 @@ CTileScene *SceneManager::createScene(const QString &name,QObject* parent) {
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
     scene->gameengine()->mediaplayer()->setPlaylist(scene->gameengine()->mediaplaylist());
     scene->gameengine()->mediaplayer()->setVolume(5);
+    scene->setName(name);
     if(name == "melba01") {
         scene->setBackgroundBrush(Qt::black);
         auto bkg = scene->setBackgroundImageByName("background01");
@@ -22,7 +23,12 @@ CTileScene *SceneManager::createScene(const QString &name,QObject* parent) {
     else if(name == "space01") {
         scene->setBackgroundBrush(Qt::black);
     }
+    m_scene_map.insert(name,scene);
     return scene;
+}
+
+CTileScene *SceneManager::getScene(const QString &name) {
+    return m_scene_map[name];
 }
 
 mfg::Engine *SceneManager::game_engine() {

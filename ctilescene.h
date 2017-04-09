@@ -21,7 +21,9 @@ typedef QList<QGraphicsItem*> GraphicsItemList;
 class CTileScene : public QGraphicsScene
 {
     Q_OBJECT
-    Sprite* m_current_sprite;
+
+    QString m_name;
+    Sprite *m_current_sprite;
     mfg::Engine *m_game_engine;
     SceneManager *m_scene_manager;
     GraphicsItemList m_deadlist;
@@ -57,6 +59,9 @@ public:
     void scene_manager(SceneManager *scene_manager);
 
     QTimer *timer();
+
+    QString name() const;
+    void setName(const QString &name);
 
 protected slots:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent) override;
