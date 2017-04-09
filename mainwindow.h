@@ -86,7 +86,7 @@ protected slots:
 private:
     Ui::MainWindow *ui;
     void setupTimer();
-    void createScene();
+    void addMelba();
     void setupStatusLabel();
     void createMenus();
     QAction* createAction(const QString& menu,const QKeySequence&,const QString& tip);

@@ -19,13 +19,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     createMenus();
-
-    setupTimer();
-    createScene();
-    setupStatusLabel();
+    //createScene();
     //spawnAll();
 
-    timer()->start(10);
 }
 
 MainWindow::~MainWindow() {
@@ -37,7 +33,8 @@ void MainWindow::setupTimer() {
     QObject::connect(timer(), SIGNAL(timeout()), this, SLOT(updateGameStatus()));
 }
 
-void MainWindow::createScene() {
+void MainWindow::addMelba() {
+    setupTimer();
     scene(new CTileScene(new mfg::Engine,this,QRectF(-475,-300,950,600)));
     scene()->setItemIndexMethod(QGraphicsScene::NoIndex);
     scene()->setBackgroundBrush(Qt::blue);
@@ -51,6 +48,8 @@ void MainWindow::createScene() {
     connect(m_console,&CConsoleWidget::signalText,this,&MainWindow::addText);
     connect(timer(), &QTimer::timeout, scene(), &CTileScene::advance);
     connect(timer(), &QTimer::timeout, scene(), &CTileScene::actorCollision);
+    setupStatusLabel();
+    timer()->start(30);
 }
 
 void MainWindow::setupStatusLabel() {
@@ -107,6 +106,11 @@ void MainWindow::createMenus()
     menu = menuBar()->addMenu(tr("&Widget"));
     action = createAction("&Console",QKeySequence(tr("Alt+Ctrl+C","Widget | Console")),"Show Console Widget");
     connect(action,&QAction::triggered,this,&MainWindow::addConsole);
+    menu->addAction(action);
+
+    menu = menuBar()->addMenu(tr("Sc&enes"));
+    action = createAction("Legend of Melba",QKeySequence(tr("Alt+Ctrl+L","Scene | Melba")),"Show the melba scene");
+    connect(action,&QAction::triggered,this,&MainWindow::addMelba);
     menu->addAction(action);
 
 }
