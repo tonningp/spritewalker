@@ -40,6 +40,7 @@ void MainWindow::setupTimer() {
 void MainWindow::createScene() {
     scene(new CTileScene(new mfg::Engine,this,QRectF(-475,-300,950,600)));
     scene()->setItemIndexMethod(QGraphicsScene::NoIndex);
+    scene()->setBackgroundBrush(Qt::black);
     ui->graphicsView->setScene(scene());
     drawScene();
     m_console = new CConsoleWidget;
@@ -158,9 +159,9 @@ void MainWindow::changeVolume(int v) {
 }
 
 void MainWindow::drawScene() {
-    auto bkg = scene()->setBackgroundImageByName("background01");
-    bkg->setPos(-1*scene()->sceneRect().height()/2-175, -1*scene()->sceneRect().height()/2);
-    bkg->setZValue(-1000);
+    //auto bkg = scene()->setBackgroundImageByName("background01");
+    //bkg->setPos(-1*scene()->sceneRect().height()/2-175, -1*scene()->sceneRect().height()/2);
+    //bkg->setZValue(-1000);
 }
 
 void MainWindow::addHero() {
