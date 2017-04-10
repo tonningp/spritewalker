@@ -8,6 +8,14 @@ SceneManager::SceneManager(mfg::Engine *engine) : m_engine(engine) {
 
 }
 
+/**
+ * @brief SceneManager::createScene
+ * 		creates the scene by name
+ * 		TODO: build scene from json description if available
+ * @param name:string the name of the scene
+ * @param parent the parent for the scene, usually the main window
+ * @return scene the newly created scene
+ */
 CTileScene *SceneManager::createScene(const QString &name,QObject* parent) {
     CTileScene *scene = new CTileScene(this,parent,QRectF(-475,-300,950,600));
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);

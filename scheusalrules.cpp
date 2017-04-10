@@ -21,6 +21,7 @@ void ScheusalRules::apply(Actor * actor) {
                 else{
                         actor->collisionState(Collision_State::FRIEND);
                         collides_with->collisionState(Collision_State::FRIEND);
+                        actor->direction((Sprite_Direction)CUtilities::randInt(0,3));
                 }
        }
     }

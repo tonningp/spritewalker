@@ -20,6 +20,7 @@ void VillagerRules::apply(Actor * actor) {
                 else{
                         if(actor) actor->collisionState(Collision_State::FRIEND);
                         if(collides_with) collides_with->collisionState(Collision_State::FRIEND);
+                        actor->direction((Sprite_Direction)CUtilities::randInt(0,3));
                 }
        }
     }

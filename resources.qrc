@@ -38,16 +38,16 @@
         <file>assets/images/water01.png</file>
         <file>assets/images/wilderness_stream.png</file>
         <file>assets/images/xeonrockloop3.png</file>
-        <file>config/female_villager.json</file>
-        <file>config/hero.json</file>
-        <file>config/male_villager.json</file>
-        <file>config/monster.json</file>
-        <file>config/mountain.json</file>
-        <file>config/scheusal.json</file>
-        <file>config/scheusal01.json</file>
-        <file>config/tree01.json</file>
-        <file>config/villager.json</file>
-        <file>config/wilderness01.json</file>
         <file>assets/sound/fantasy01.mp3</file>
+        <file>config/characters/female_villager.json</file>
+        <file>config/characters/hero.json</file>
+        <file>config/characters/male_villager.json</file>
+        <file>config/characters/monster.json</file>
+        <file>config/characters/mountain.json</file>
+        <file>config/characters/scheusal.json</file>
+        <file>config/characters/scheusal01.json</file>
+        <file>config/characters/tree01.json</file>
+        <file>config/characters/villager.json</file>
+        <file>config/characters/wilderness01.json</file>
     </qresource>
 </RCC>

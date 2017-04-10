@@ -33,7 +33,7 @@ MainWindow::~MainWindow() {
 
 void MainWindow::setupTimer() {
     timer(new QTimer);
-    //QObject::connect(timer(), SIGNAL(timeout()), this, SLOT(updateGameStatus()));
+    QObject::connect(timer(), SIGNAL(timeout()), this, SLOT(updateGameStatus()));
     timer()->start(100);
 }
 
@@ -46,15 +46,13 @@ void MainWindow::showSpace() {
 }
 
 void MainWindow::showScene(const QString &name) {
-    if(scene() == NULL || scene()->name() != name) {
-        if(scene() == NULL) {
-            mfg::Engine *ge = new mfg::Engine;
-            ge->sceneManager()->createScene(name,this);
-            scene(ge->sceneManager()->getScene(name));
-        }
-        else if(scene()->gameengine()->sceneManager()->getScene(name) == NULL) {
-            scene()->gameengine()->sceneManager()->createScene(name,this);
-        }
+    if(scene() == NULL) {
+        mfg::Engine *ge = new mfg::Engine;
+        ge->sceneManager()->createScene(name,this);
+        scene(ge->sceneManager()->getScene(name));
+    }
+    else if(scene()->gameengine()->sceneManager()->getScene(name) == NULL) {
+        scene()->gameengine()->sceneManager()->createScene(name,this);
     }
     scene(scene()->gameengine()->sceneManager()->getScene(name));
     ui->graphicsView->setScene(scene()->gameengine()->sceneManager()->getScene(name));
