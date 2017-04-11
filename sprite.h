@@ -9,9 +9,17 @@
 #include <QPair>
 #include <QPointer>
 #include "sequentialguid.h"
-#include "gameengine.h"
+//#include "gameengine.h"
 
 class Sprite;
+class AssetManager;
+namespace mfg {
+    class Engine;
+}
+
+typedef QPair<float,float> SpriteCoordinate;
+typedef QVector<SpriteCoordinate> Coordinates;
+typedef QVector<Coordinates> CoordinatesVector;
 typedef QList<Sprite*> SpriteList;
 typedef QList<QGraphicsItem*> ItemList;
 typedef QMap<QString,CoordinatesVector> SpriteFramesMap;

@@ -1,5 +1,9 @@
 #include "sprite.h"
+#include "gameengine.h"
+#include "assetmanager.h"
 #include <QGraphicsScene>
+
+using namespace mfg;
 
 Sprite::Sprite(const QString &name,mfg::Engine* game_engine,bool moving,QObject *parent) :
     QObject(parent),QGraphicsItem(),

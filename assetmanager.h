@@ -6,11 +6,9 @@
 #include <QPixmap>
 #include <QSet>
 #include <QVariantMap>
+#include "sprite.h"
 
 
-typedef QPair<float,float> SpriteCoordinate;
-typedef QVector<SpriteCoordinate> Coordinates;
-typedef QVector<Coordinates> CoordinatesVector;
 
 typedef QVariantMap AssetMap;
 typedef QVariantMap ImageMap;
