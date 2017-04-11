@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['villagerrules',['VillagerRules',['../class_villager_rules.html',1,'']]]
+  ['ruleset',['RuleSet',['../class_rule_set.html',1,'']]]
 ];

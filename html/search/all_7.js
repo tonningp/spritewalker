@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['scenemanager',['SceneManager',['../class_scene_manager.html',1,'']]],
-  ['scheusalrules',['ScheusalRules',['../class_scheusal_rules.html',1,'']]],
-  ['sequentialguid',['SequentialGUID',['../class_sequential_g_u_i_d.html',1,'']]],
-  ['sprite',['Sprite',['../class_sprite.html',1,'']]],
-  ['stats',['Stats',['../structmfg_1_1_stats.html',1,'mfg']]]
+  ['newfile',['newFile',['../class_main_window.html#a69f73b93cc05c89a9ae1be0161105982',1,'MainWindow']]]
 ];
