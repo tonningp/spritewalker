@@ -12,6 +12,9 @@ namespace mfg {
   class Engine;
 }
 
+/**
+ * @brief The SceneManager class - defines a SceneManager
+ */
 class SceneManager
 {
     mfg::Engine *m_engine;

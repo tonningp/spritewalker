@@ -2,6 +2,14 @@
 #define SCHEUSALRULES_H
 #include "ruleset.h"
 
+class Actor;
+namespace mfg {
+ class Engine;
+}
+
+/**
+ * @brief The ScheusalRules class - Rule set for a Scheusal (Zombie)
+ */
 class ScheusalRules : public RuleSet
 {
 public:

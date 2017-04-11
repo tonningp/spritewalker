@@ -14,6 +14,10 @@ namespace Ui {
 class MainWindow;
 }
 enum KeyState {KEY_UP,KEY_DOWN};
+
+/**
+ * @brief The MainWindow class - Defines Main window for application
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT

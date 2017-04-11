@@ -1,7 +1,14 @@
 #ifndef HERORULES_H
 #define HERORULES_H
-#include "actor.h"
 #include "ruleset.h"
+
+class Actor;
+namespace mfg {
+ class Engine;
+}
+/**
+ * @brief The HeroRules class - define rules for a Hero Actor
+ */
 class HeroRules : public RuleSet
 {
 public:

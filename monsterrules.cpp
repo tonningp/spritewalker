@@ -1,6 +1,7 @@
-#include "monsterrules.h"
+#include "actor.h"
 #include "utilities.h"
 #include "ruleset.h"
+#include "monsterrules.h"
 
 MonsterRules::MonsterRules(mfg::Engine *ge): RuleSet(ge) {
 }

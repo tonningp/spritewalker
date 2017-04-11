@@ -7,7 +7,9 @@
 namespace Ui {
 class ActorDialog;
 }
-
+/**
+ * @brief The ActorDialog class - defines a dialog box for actor properties
+ */
 class ActorDialog : public QDialog
 {
     Q_OBJECT

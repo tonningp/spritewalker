@@ -1,3 +1,5 @@
+#include "actor.h"
+#include "ruleset.h"
 #include "herorules.h"
 #include "utilities.h"
 

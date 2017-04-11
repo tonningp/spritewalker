@@ -1,0 +1,174 @@
+\hypertarget{class_game_scene}{}\section{Game\+Scene Class Reference}
+\label{class_game_scene}\index{Game\+Scene@{Game\+Scene}}
+
+
+The \hyperlink{class_game_scene}{Game\+Scene} class -\/ creates a graphic scene used for game play.  
+
+
+
+
+{\ttfamily \#include $<$gamescene.\+h$>$}
+
+Inheritance diagram for Game\+Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_scene}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_scene_a5eaeebac1ab47bc9cb51dba7273f787d}\label{class_game_scene_a5eaeebac1ab47bc9cb51dba7273f787d}} 
+void {\bfseries sprite\+Selected} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$, \hyperlink{class_sprite}{Sprite} $\ast$)
+\item 
+\mbox{\Hypertarget{class_game_scene_a54b85a8a3edf7109043576175845cae0}\label{class_game_scene_a54b85a8a3edf7109043576175845cae0}} 
+void {\bfseries advance} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_ad692069ae30670af3c614c0b783622f3}\label{class_game_scene_ad692069ae30670af3c614c0b783622f3}} 
+void {\bfseries actor\+Collision} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_scene_abf292a17082d258a7c9a670c2eda50ea}\label{class_game_scene_abf292a17082d258a7c9a670c2eda50ea}} 
+{\bfseries Game\+Scene} (\hyperlink{class_scene_manager}{Scene\+Manager} $\ast$sm, Q\+Object $\ast$parent=0, const Q\+RectF \&rect=Q\+RectF(-\/300,-\/300, 600, 600))
+\item 
+\mbox{\Hypertarget{class_game_scene_a02a45a8bd424e6a09fb928b84abab216}\label{class_game_scene_a02a45a8bd424e6a09fb928b84abab216}} 
+void {\bfseries connect\+Timer} (Q\+Timer $\ast$)
+\item 
+\mbox{\Hypertarget{class_game_scene_ab0f133a857eac33d3d3f4a0d0293fb33}\label{class_game_scene_ab0f133a857eac33d3d3f4a0d0293fb33}} 
+void {\bfseries draw\+Grid} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_a5472c7fdab73c3f2633861a2fc77fdfc}\label{class_game_scene_a5472c7fdab73c3f2633861a2fc77fdfc}} 
+void {\bfseries add\+Item} (Q\+Graphics\+Item $\ast$item, const Q\+String \&name)
+\item 
+\mbox{\Hypertarget{class_game_scene_a51c98b3db623b2247afa8b6360d4a04b}\label{class_game_scene_a51c98b3db623b2247afa8b6360d4a04b}} 
+\hyperlink{class_actor}{Scene\+Actor} $\ast$ {\bfseries add\+Actor} (const Q\+String \&name, const Q\+String \&start\+\_\+action, bool moving)
+\item 
+\mbox{\Hypertarget{class_game_scene_adfa6afce903509fba5324dd822365937}\label{class_game_scene_adfa6afce903509fba5324dd822365937}} 
+\hyperlink{class_sprite}{Sprite} $\ast$ {\bfseries add\+Sprite} (const Q\+String \&name, const Q\+String \&start\+\_\+action, bool moving)
+\item 
+\mbox{\Hypertarget{class_game_scene_a9ce725296c40edfad55477389d771b5a}\label{class_game_scene_a9ce725296c40edfad55477389d771b5a}} 
+void {\bfseries remove\+Actor} (\hyperlink{class_actor}{Scene\+Actor} $\ast$)
+\item 
+\mbox{\Hypertarget{class_game_scene_a7c837f21ae8de156ffe364f61512126d}\label{class_game_scene_a7c837f21ae8de156ffe364f61512126d}} 
+\hyperlink{class_sprite}{Sprite} $\ast$ {\bfseries current\+\_\+sprite} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_a583bc8b9dbeb21d89be15c1e9af85898}\label{class_game_scene_a583bc8b9dbeb21d89be15c1e9af85898}} 
+\hyperlink{class_sprite}{Sprite} $\ast$ {\bfseries current\+\_\+sprite} (\hyperlink{class_sprite}{Sprite} $\ast$)
+\item 
+\mbox{\Hypertarget{class_game_scene_a748a3207ff433972a6ea24d2dbbb089d}\label{class_game_scene_a748a3207ff433972a6ea24d2dbbb089d}} 
+Actor\+Count\+Map {\bfseries get\+Actor\+Counts} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_a13d54b44f642489278e20b486678c686}\label{class_game_scene_a13d54b44f642489278e20b486678c686}} 
+Actor\+List {\bfseries get\+All\+Actors} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_a8a811a7b2497a20b8e0757e2bdc26932}\label{class_game_scene_a8a811a7b2497a20b8e0757e2bdc26932}} 
+Q\+Vector$<$ Q\+String $>$ {\bfseries players} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_a7077ce88eca56dee27ba8deae2c5c1bf}\label{class_game_scene_a7077ce88eca56dee27ba8deae2c5c1bf}} 
+int {\bfseries dead\+Count} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_a26ee4d4610a8fd5b9af762d8a3c2f8d7}\label{class_game_scene_a26ee4d4610a8fd5b9af762d8a3c2f8d7}} 
+void {\bfseries clear\+Dead} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_aeb498f64c57482b7a340587c03f886d9}\label{class_game_scene_aeb498f64c57482b7a340587c03f886d9}} 
+bool {\bfseries is\+Scene\+Actor} (Q\+Graphics\+Item $\ast$item)
+\item 
+\mbox{\Hypertarget{class_game_scene_aa55dfeaf2d458b5c05d4dc206f8022ed}\label{class_game_scene_aa55dfeaf2d458b5c05d4dc206f8022ed}} 
+void {\bfseries clear\+Actors} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_a6971c7adf7fed708c747322324ee2045}\label{class_game_scene_a6971c7adf7fed708c747322324ee2045}} 
+Graphics\+Item\+List {\bfseries get\+Deadlist} () const
+\item 
+\mbox{\Hypertarget{class_game_scene_a18424ff3ed1d4c423a7ca20f2191983c}\label{class_game_scene_a18424ff3ed1d4c423a7ca20f2191983c}} 
+void {\bfseries set\+Deadlist} (const Graphics\+Item\+List \&deadlist)
+\item 
+\mbox{\Hypertarget{class_game_scene_a484d473ed3a7537aec18066a382480d2}\label{class_game_scene_a484d473ed3a7537aec18066a382480d2}} 
+Q\+Time {\bfseries current\+\_\+time} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_ac5875684ca060591cad3f2e02c3c7a21}\label{class_game_scene_ac5875684ca060591cad3f2e02c3c7a21}} 
+Q\+Graphics\+Item $\ast$ {\bfseries set\+Background\+Image\+By\+Name} (const Q\+String \&name)
+\item 
+\mbox{\Hypertarget{class_game_scene_a0d67003cada8079ada8c2bf7ea924134}\label{class_game_scene_a0d67003cada8079ada8c2bf7ea924134}} 
+\hyperlink{classmfg_1_1_engine}{mfg\+::\+Engine} $\ast$ {\bfseries game\+Engine} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_a774aaa53865ee6184b3bbcec5ed976b0}\label{class_game_scene_a774aaa53865ee6184b3bbcec5ed976b0}} 
+\hyperlink{class_console_widget}{Console\+Widget} $\ast$ {\bfseries console} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_ac0fedd57d4e9d653803b27fd62485211}\label{class_game_scene_ac0fedd57d4e9d653803b27fd62485211}} 
+\hyperlink{class_scene_manager}{Scene\+Manager} $\ast$ {\bfseries scene\+Manager} () const
+\item 
+\mbox{\Hypertarget{class_game_scene_a415fd6b00796cce9ac40618e3f94db4b}\label{class_game_scene_a415fd6b00796cce9ac40618e3f94db4b}} 
+void {\bfseries scene\+Manager} (\hyperlink{class_scene_manager}{Scene\+Manager} $\ast$scene\+Manager)
+\item 
+\mbox{\Hypertarget{class_game_scene_a2f075555a06267a4e150506c423846b0}\label{class_game_scene_a2f075555a06267a4e150506c423846b0}} 
+Q\+Timer $\ast$ {\bfseries timer} ()
+\item 
+\mbox{\Hypertarget{class_game_scene_a0fd4969df4e5f5f635f9ab5d3e66c404}\label{class_game_scene_a0fd4969df4e5f5f635f9ab5d3e66c404}} 
+Q\+String {\bfseries name} () const
+\item 
+\mbox{\Hypertarget{class_game_scene_a6eb8d5be7ee8f1ebb50a7fd49e9c2a35}\label{class_game_scene_a6eb8d5be7ee8f1ebb50a7fd49e9c2a35}} 
+void {\bfseries set\+Name} (const Q\+String \&name)
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_game_scene_a60e084f3ade89e765a5ff86f2c0d7bf1}{mouse\+Move\+Event} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$mouse\+Event) override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_scene_a962b8138354a26715c566c51766dba50}\label{class_game_scene_a962b8138354a26715c566c51766dba50}} 
+Q\+String {\bfseries m\+\_\+name}
+\item 
+\mbox{\Hypertarget{class_game_scene_a028e0e563ec3bd30a9afb606ef75e9f7}\label{class_game_scene_a028e0e563ec3bd30a9afb606ef75e9f7}} 
+\hyperlink{class_sprite}{Sprite} $\ast$ {\bfseries m\+\_\+current\+\_\+sprite}
+\item 
+\mbox{\Hypertarget{class_game_scene_ad2ccaf177a7647a85c3a7cdbdd646fb8}\label{class_game_scene_ad2ccaf177a7647a85c3a7cdbdd646fb8}} 
+\hyperlink{classmfg_1_1_engine}{mfg\+::\+Engine} $\ast$ {\bfseries m\+\_\+game\+\_\+engine}
+\item 
+\mbox{\Hypertarget{class_game_scene_a9caa2f44e6b54ab2e2e1278856b05503}\label{class_game_scene_a9caa2f44e6b54ab2e2e1278856b05503}} 
+\hyperlink{class_scene_manager}{Scene\+Manager} $\ast$ {\bfseries m\+\_\+scene\+\_\+manager}
+\item 
+\mbox{\Hypertarget{class_game_scene_af7f8cdc994102b36ddf0e6cf473859e2}\label{class_game_scene_af7f8cdc994102b36ddf0e6cf473859e2}} 
+Graphics\+Item\+List {\bfseries m\+\_\+deadlist}
+\item 
+\mbox{\Hypertarget{class_game_scene_afd3b6181bf71e4928c819cef61d3e246}\label{class_game_scene_afd3b6181bf71e4928c819cef61d3e246}} 
+Q\+Time {\bfseries m\+\_\+current\+\_\+time}
+\item 
+\mbox{\Hypertarget{class_game_scene_a46a12d66c156b32129df54d08e4afea8}\label{class_game_scene_a46a12d66c156b32129df54d08e4afea8}} 
+Q\+Timer $\ast$ {\bfseries m\+\_\+timer}
+\item 
+\mbox{\Hypertarget{class_game_scene_abda4ce287b680ead5be56d31712d6d17}\label{class_game_scene_abda4ce287b680ead5be56d31712d6d17}} 
+\hyperlink{class_console_widget}{Console\+Widget} $\ast$ {\bfseries m\+\_\+console}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_game_scene}{Game\+Scene} class -\/ creates a graphic scene used for game play. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_scene_a60e084f3ade89e765a5ff86f2c0d7bf1}\label{class_game_scene_a60e084f3ade89e765a5ff86f2c0d7bf1}} 
+\index{Game\+Scene@{Game\+Scene}!mouse\+Move\+Event@{mouse\+Move\+Event}}
+\index{mouse\+Move\+Event@{mouse\+Move\+Event}!Game\+Scene@{Game\+Scene}}
+\subsubsection{\texorpdfstring{mouse\+Move\+Event}{mouseMoveEvent}}
+{\footnotesize\ttfamily void Game\+Scene\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Scene\+Mouse\+Event $\ast$}]{mouse\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse\+Event} & Need to set\+Mouse\+Tracking = true in the view \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+237                                                                    \{
+238     QGraphicsScene::mouseMoveEvent(mouseEvent);
+239 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+gamescene.\+h\item 
+gamescene.\+cpp\end{DoxyCompactItemize}

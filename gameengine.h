@@ -11,7 +11,9 @@
 
 class RuleSet;
 namespace mfg {
-
+/**
+ * @brief The Stats struct - defines the stats for a character
+ */
 struct Stats{
     int health,stamina,wealth,manna,life;
 };
@@ -20,6 +22,9 @@ typedef QMap<QString,RuleSet*> RuleMap;
 typedef QMap<QString,AssetManager*> AssetManagerMap;
 typedef QMap<QString,QPixmap*> PixmapMap;
 
+/**
+ * @brief The Engine class - a game engine
+ */
 class Engine {
     QScriptEngine *m_script_engine;
     SceneManager *m_scene_manager;

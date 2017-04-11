@@ -7,7 +7,7 @@
 
 
 /**
- * @brief The Actor class -- provides a specific type of Sprite that defines both non player and player characters
+ * @brief The Actor class - provides a specific type of Sprite that defines both non player and player characters
  * @description
  */
 class Actor : public Sprite {

@@ -24,7 +24,6 @@ SOURCES += main.cpp\
     villagerrules.cpp \
     monsterrules.cpp \
     scheusalrules.cpp \
-    actorassets.cpp \
     assetmanager.cpp \
     sequentialguid.cpp \
     scenemanager.cpp \
@@ -43,7 +42,6 @@ HEADERS  += mainwindow.h \
     villagerrules.h \
     monsterrules.h \
     scheusalrules.h \
-    actorassets.h \
     assetmanager.h \
     typedefs.h \
     sequentialguid.h \

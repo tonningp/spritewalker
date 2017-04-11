@@ -5,10 +5,16 @@
 #include <QSet>
 #include <QString>
 
-#include "gameengine.h"
-#include "actor.h"
+class Actor;
+namespace mfg {
+  class Engine;
+}
 
 typedef QSet<QString> StringSet;
+
+/**
+ * @brief The RuleSet class - define rules for characters
+ */
 class RuleSet
 {
     Actor* m_actor;

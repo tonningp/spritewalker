@@ -1,5 +1,7 @@
-#include "scheusalrules.h"
+#include "actor.h"
+#include "ruleset.h"
 #include "utilities.h"
+#include "scheusalrules.h"
 
 ScheusalRules::ScheusalRules(mfg::Engine *ge):RuleSet::RuleSet(ge) {
 }

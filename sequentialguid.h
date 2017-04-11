@@ -9,6 +9,9 @@
 #include <QTime>
 
 
+/**
+ * @brief The SequentialGUID class - define a class for creating a Sequential GUID
+ */
 class SequentialGUID : public QObject
 {
     Q_OBJECT

@@ -1,5 +1,7 @@
-#include "villagerrules.h"
+#include "actor.h"
 #include "utilities.h"
+#include "ruleset.h"
+#include "villagerrules.h"
 
 VillagerRules::VillagerRules(mfg::Engine *ge):RuleSet::RuleSet(ge) {
 }

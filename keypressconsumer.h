@@ -7,7 +7,7 @@
 
 
 /**
- * @brief The KeyPressConsumer class -- traps keyboard events so arrow keys can be filtered from application
+ * @brief The KeyPressConsumer class - traps keyboard events so arrow keys can be filtered from application
  */
 class KeyPressConsumer : public QObject
 {

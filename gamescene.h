@@ -19,7 +19,7 @@ typedef QMap<QString,int> ActorCountMap;
 typedef QList<QGraphicsItem*> GraphicsItemList;
 
 /**
- * @brief The GameScene class -- creates a graphic scene used for game play
+ * @brief The GameScene class - creates a graphic scene used for game play
  */
 class GameScene : public QGraphicsScene
 {

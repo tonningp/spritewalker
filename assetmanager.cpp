@@ -10,6 +10,10 @@ AssetManager::AssetManager(const QString& name) {
     init(name);
 }
 
+/**
+ * @brief AssetManager::init - initialize the asset manager
+ * @param name
+ */
 void AssetManager::init(const QString &name) {
     QString settings;
     QFile file;

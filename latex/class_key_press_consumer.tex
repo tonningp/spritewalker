@@ -1,0 +1,56 @@
+\hypertarget{class_key_press_consumer}{}\section{Key\+Press\+Consumer Class Reference}
+\label{class_key_press_consumer}\index{Key\+Press\+Consumer@{Key\+Press\+Consumer}}
+
+
+The \hyperlink{class_key_press_consumer}{Key\+Press\+Consumer} class -\/ traps keyboard events so arrow keys can be filtered from application.  
+
+
+
+
+{\ttfamily \#include $<$keypressconsumer.\+h$>$}
+
+Inheritance diagram for Key\+Press\+Consumer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_key_press_consumer}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_key_press_consumer_aba09e00816c6024836487d2cb6249cd8}\label{class_key_press_consumer_aba09e00816c6024836487d2cb6249cd8}} 
+void {\bfseries arrow\+Key} (Q\+Key\+Event $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_key_press_consumer_a6f51041d96314790d033bce351b8f020}\label{class_key_press_consumer_a6f51041d96314790d033bce351b8f020}} 
+{\bfseries Key\+Press\+Consumer} (Q\+Object $\ast$target, Q\+Object $\ast$parent=0)
+\item 
+\mbox{\Hypertarget{class_key_press_consumer_a2cbcc1db29e0447999a58f658cbae742}\label{class_key_press_consumer_a2cbcc1db29e0447999a58f658cbae742}} 
+Q\+Object $\ast$ {\bfseries target} () const
+\item 
+\mbox{\Hypertarget{class_key_press_consumer_abcbcaf5a0c8e1d04b134e6b65b53ad7e}\label{class_key_press_consumer_abcbcaf5a0c8e1d04b134e6b65b53ad7e}} 
+void {\bfseries set\+Target} (Q\+Object $\ast$target)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_key_press_consumer_a375adc3bbaababb0e7a6aee2e12d99c6}\label{class_key_press_consumer_a375adc3bbaababb0e7a6aee2e12d99c6}} 
+bool {\bfseries event\+Filter} (Q\+Object $\ast$obj, Q\+Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_key_press_consumer_a4270d30101dac8588fa1603ce3f573c6}\label{class_key_press_consumer_a4270d30101dac8588fa1603ce3f573c6}} 
+Q\+Object $\ast$ {\bfseries m\+\_\+target}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_key_press_consumer}{Key\+Press\+Consumer} class -\/ traps keyboard events so arrow keys can be filtered from application. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+keypressconsumer.\+h\item 
+keypressconsumer.\+cpp\end{DoxyCompactItemize}

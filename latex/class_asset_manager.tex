@@ -1,5 +1,14 @@
 \hypertarget{class_asset_manager}{}\section{Asset\+Manager Class Reference}
 \label{class_asset_manager}\index{Asset\+Manager@{Asset\+Manager}}
+
+
+The \hyperlink{class_asset_manager}{Asset\+Manager} class -\/ defines a manager for \hyperlink{class_sprite}{Sprite} assets.  
+
+
+
+
+{\ttfamily \#include $<$assetmanager.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -69,9 +78,8 @@ bool {\bfseries has\+Action} (const Q\+String \&name)
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_asset_manager_aa1d50ebdf4aa6df6fba090e649eb6ec0}\label{class_asset_manager_aa1d50ebdf4aa6df6fba090e649eb6ec0}} 
-void {\bfseries init} (const Q\+String \&name)
-\end{DoxyCompactItemize}
+void \hyperlink{class_asset_manager_aa1d50ebdf4aa6df6fba090e649eb6ec0}{init} (const Q\+String \&name)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_asset_manager_aa1d50ebdf4aa6df6fba090e649eb6ec0}{Asset\+Manager\+::init} -\/ initialize the asset manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -87,6 +95,61 @@ Coordinates\+Vector {\bfseries m\+\_\+sprite\+\_\+image\+\_\+coordinates}
 \mbox{\Hypertarget{class_asset_manager_a8c7dee0564fcd582ae15c299afa758f2}\label{class_asset_manager_a8c7dee0564fcd582ae15c299afa758f2}} 
 static Asset\+Map {\bfseries m\+\_\+asset\+\_\+map}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_asset_manager}{Asset\+Manager} class -\/ defines a manager for \hyperlink{class_sprite}{Sprite} assets. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_asset_manager_aa1d50ebdf4aa6df6fba090e649eb6ec0}\label{class_asset_manager_aa1d50ebdf4aa6df6fba090e649eb6ec0}} 
+\index{Asset\+Manager@{Asset\+Manager}!init@{init}}
+\index{init@{init}!Asset\+Manager@{Asset\+Manager}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Asset\+Manager\+::init (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{class_asset_manager_aa1d50ebdf4aa6df6fba090e649eb6ec0}{Asset\+Manager\+::init} -\/ initialize the asset manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+17                                            \{
+18     QString settings;
+19     QFile file;
+20     file.setFileName(\textcolor{stringliteral}{":/config/characters/"}+name+\textcolor{stringliteral}{".json"});
+21     file.open(QIODevice::ReadOnly | QIODevice::Text);
+22     settings = file.readAll();
+23     file.close();
+24     QJsonDocument sd = QJsonDocument::fromJson(settings.toUtf8());
+25     \textcolor{keywordflow}{if}(sd.isEmpty()) \{
+26         \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"Error with JSON Document: "} + name + \textcolor{stringliteral}{".json"};
+27     \}
+28     QJsonObject sett2 = sd.object();
+29     m\_asset\_map[name+\textcolor{stringliteral}{"\_sprite\_sheet\_name"}] = sett2[\textcolor{stringliteral}{"spritesheet"}].toString();
+30     m\_asset\_map[name+\textcolor{stringliteral}{"\_friends"}] = sett2[\textcolor{stringliteral}{"friends"}].toArray();
+31     m\_asset\_map[name+\textcolor{stringliteral}{"\_foes"}] = sett2[\textcolor{stringliteral}{"foes"}].toArray();
+32     m\_asset\_map[name+\textcolor{stringliteral}{"\_actions"}] = sett2[\textcolor{stringliteral}{"actions"}].toArray();
+33     m\_asset\_map[name+\textcolor{stringliteral}{"\_directions"}] = sett2[\textcolor{stringliteral}{"directions"}].toArray();
+34     m\_asset\_map[name+\textcolor{stringliteral}{"\_primary\_fight\_action"}] = sett2[\textcolor{stringliteral}{"primary\_fight\_action"}].toString();
+35     m\_asset\_map[name+\textcolor{stringliteral}{"\_default"}] = QPixmap(sett2[\textcolor{stringliteral}{"spritesheet"}].toString());
+36     QVariantMap imp = sett2[\textcolor{stringliteral}{"image\_properties"}].toVariant().toMap();
+37     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} key : imp.keys()) \{
+38         m\_asset\_map[name+\textcolor{stringliteral}{"\_image\_properties\_"}+key] = imp[key].value<\textcolor{keywordtype}{int}>();
+39     \}
+40     m\_asset\_map[name+\textcolor{stringliteral}{"\_image\_properties"}] = sett2[\textcolor{stringliteral}{"image\_properties"}].toVariant().toMap();
+41     QVariantMap m = sett2[\textcolor{stringliteral}{"sprite\_pages"}].toVariant().toMap();
+42     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} key : m.keys()) \{
+43         m\_asset\_map[name+\textcolor{stringliteral}{"\_sprite\_"}+key+\textcolor{stringliteral}{"\_row"}] = m[key].value<QVariantMap>()[\textcolor{stringliteral}{"row"}].value<int>();
+44         m\_asset\_map[name+\textcolor{stringliteral}{"\_sprite\_"}+key+\textcolor{stringliteral}{"\_col"}] = m[key].value<QVariantMap>()[\textcolor{stringliteral}{"col"}].value<int>();
+45         m\_asset\_map[name+\textcolor{stringliteral}{"\_sprite\_"}+key+\textcolor{stringliteral}{"\_cells"}] = m[key].value<QVariantMap>()[\textcolor{stringliteral}{"cells"}].value<int>();
+46     \}
+47 \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

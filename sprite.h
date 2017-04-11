@@ -17,6 +17,18 @@ typedef QList<QGraphicsItem*> ItemList;
 typedef QMap<QString,CoordinatesVector> SpriteFramesMap;
 typedef QPointer<Sprite> SpritePointer;
 
+/**
+ * @brief The Sprite_Direction enum -- defines the direction a sprite is moving
+ */
+enum Sprite_Direction {SPRITE_DOWN,SPRITE_LEFT,SPRITE_RIGHT,SPRITE_UP};
+/**
+ * @brief The Collision_State enum -- defines what has been collided with
+ */
+enum Collision_State {FRIEND,FOE,NEUTRAL};
+
+/**
+ * @brief The Sprite class - defines a Sprite
+ */
 class Sprite : public QObject,public QGraphicsItem
 {
     Q_OBJECT

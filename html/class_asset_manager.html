@@ -68,6 +68,11 @@ $(function() {
 <div class="title">AssetManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_asset_manager.html" title="The AssetManager class - defines a manager for Sprite assets. ">AssetManager</a> class - defines a manager for <a class="el" href="class_sprite.html" title="The Sprite class - defines a Sprite. ">Sprite</a> assets.  
+ <a href="class_asset_manager.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="assetmanager_8h_source.html">assetmanager.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -137,8 +142,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasAction</b> (const 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aa1d50ebdf4aa6df6fba090e649eb6ec0"><td class="memItemLeft" align="right" valign="top"><a id="aa1d50ebdf4aa6df6fba090e649eb6ec0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> (const QString &amp;name)</td></tr>
+<tr class="memitem:aa1d50ebdf4aa6df6fba090e649eb6ec0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#aa1d50ebdf4aa6df6fba090e649eb6ec0">init</a> (const QString &amp;name)</td></tr>
+<tr class="memdesc:aa1d50ebdf4aa6df6fba090e649eb6ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_asset_manager.html#aa1d50ebdf4aa6df6fba090e649eb6ec0" title="AssetManager::init - initialize the asset manager. ">AssetManager::init</a> - initialize the asset manager.  <a href="#aa1d50ebdf4aa6df6fba090e649eb6ec0">More...</a><br /></td></tr>
 <tr class="separator:aa1d50ebdf4aa6df6fba090e649eb6ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -156,6 +161,43 @@ Static Private Attributes</h2></td></tr>
 static AssetMap&#160;</td><td class="memItemRight" valign="bottom"><b>m_asset_map</b></td></tr>
 <tr class="separator:a8c7dee0564fcd582ae15c299afa758f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_asset_manager.html" title="The AssetManager class - defines a manager for Sprite assets. ">AssetManager</a> class - defines a manager for <a class="el" href="class_sprite.html" title="The Sprite class - defines a Sprite. ">Sprite</a> assets. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa1d50ebdf4aa6df6fba090e649eb6ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d50ebdf4aa6df6fba090e649eb6ec0">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AssetManager::init </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_asset_manager.html#aa1d50ebdf4aa6df6fba090e649eb6ec0" title="AssetManager::init - initialize the asset manager. ">AssetManager::init</a> - initialize the asset manager. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                           {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    QString settings;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    QFile file;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    file.setFileName(<span class="stringliteral">&quot;:/config/characters/&quot;</span>+name+<span class="stringliteral">&quot;.json&quot;</span>);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    file.open(QIODevice::ReadOnly | QIODevice::Text);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    settings = file.readAll();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    file.close();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    QJsonDocument sd = QJsonDocument::fromJson(settings.toUtf8());</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span>(sd.isEmpty()) {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">throw</span> <span class="stringliteral">&quot;Error with JSON Document: &quot;</span> + name + <span class="stringliteral">&quot;.json&quot;</span>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    QJsonObject sett2 = sd.object();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    m_asset_map[name+<span class="stringliteral">&quot;_sprite_sheet_name&quot;</span>] = sett2[<span class="stringliteral">&quot;spritesheet&quot;</span>].toString();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    m_asset_map[name+<span class="stringliteral">&quot;_friends&quot;</span>] = sett2[<span class="stringliteral">&quot;friends&quot;</span>].toArray();</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    m_asset_map[name+<span class="stringliteral">&quot;_foes&quot;</span>] = sett2[<span class="stringliteral">&quot;foes&quot;</span>].toArray();</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_asset_map[name+<span class="stringliteral">&quot;_actions&quot;</span>] = sett2[<span class="stringliteral">&quot;actions&quot;</span>].toArray();</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    m_asset_map[name+<span class="stringliteral">&quot;_directions&quot;</span>] = sett2[<span class="stringliteral">&quot;directions&quot;</span>].toArray();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    m_asset_map[name+<span class="stringliteral">&quot;_primary_fight_action&quot;</span>] = sett2[<span class="stringliteral">&quot;primary_fight_action&quot;</span>].toString();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    m_asset_map[name+<span class="stringliteral">&quot;_default&quot;</span>] = QPixmap(sett2[<span class="stringliteral">&quot;spritesheet&quot;</span>].toString());</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    QVariantMap imp = sett2[<span class="stringliteral">&quot;image_properties&quot;</span>].toVariant().toMap();</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> key : imp.keys()) {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        m_asset_map[name+<span class="stringliteral">&quot;_image_properties_&quot;</span>+key] = imp[key].value&lt;<span class="keywordtype">int</span>&gt;();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    m_asset_map[name+<span class="stringliteral">&quot;_image_properties&quot;</span>] = sett2[<span class="stringliteral">&quot;image_properties&quot;</span>].toVariant().toMap();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    QVariantMap m = sett2[<span class="stringliteral">&quot;sprite_pages&quot;</span>].toVariant().toMap();</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> key : m.keys()) {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        m_asset_map[name+<span class="stringliteral">&quot;_sprite_&quot;</span>+key+<span class="stringliteral">&quot;_row&quot;</span>] = m[key].value&lt;QVariantMap&gt;()[<span class="stringliteral">&quot;row&quot;</span>].value&lt;int&gt;();</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        m_asset_map[name+<span class="stringliteral">&quot;_sprite_&quot;</span>+key+<span class="stringliteral">&quot;_col&quot;</span>] = m[key].value&lt;QVariantMap&gt;()[<span class="stringliteral">&quot;col&quot;</span>].value&lt;int&gt;();</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        m_asset_map[name+<span class="stringliteral">&quot;_sprite_&quot;</span>+key+<span class="stringliteral">&quot;_cells&quot;</span>] = m[key].value&lt;QVariantMap&gt;()[<span class="stringliteral">&quot;cells&quot;</span>].value&lt;int&gt;();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="assetmanager_8h_source.html">assetmanager.h</a></li>
 <li>assetmanager.cpp</li>

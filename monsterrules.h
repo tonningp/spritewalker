@@ -3,6 +3,13 @@
 #include "ruleset.h"
 
 class Actor;
+namespace mfg {
+ class Engine;
+}
+
+/**
+ * @brief The MonsterRules class - Rule set for a Monster
+ */
 class MonsterRules : public RuleSet
 {
 public:

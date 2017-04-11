@@ -16,12 +16,10 @@ typedef QVariantMap AssetMap;
 typedef QVariantMap ImageMap;
 typedef QVariantMap PropertyMap;
 
-enum Sprite_Direction {SPRITE_DOWN,SPRITE_LEFT,SPRITE_RIGHT,SPRITE_UP};
-enum Collision_State {FRIEND,FOE,NEUTRAL};
 
-struct {
-    int width,height;
-} ImageInfo;
+/**
+ * @brief The AssetManager class - defines a manager for Sprite assets
+ */
 
 class AssetManager
 {
