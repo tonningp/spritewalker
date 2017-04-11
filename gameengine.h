@@ -9,14 +9,14 @@
 #include "assetmanager.h"
 #include "scenemanager.h"
 
-class CRuleSet;
+class RuleSet;
 namespace mfg {
 
 struct Stats{
     int health,stamina,wealth,manna,life;
 };
 
-typedef QMap<QString,CRuleSet*> RuleMap;
+typedef QMap<QString,RuleSet*> RuleMap;
 typedef QMap<QString,AssetManager*> AssetManagerMap;
 typedef QMap<QString,QPixmap*> PixmapMap;
 
@@ -41,9 +41,9 @@ public:
     void buildPixmaps();
     AssetManager* addAssetManager(const QString& name,AssetManager* am);
     AssetManager* assetManager(const QString& name);
-    CRuleSet* ruleFactory(const QString &name);
-    CRuleSet *actorRule(const QString &name);
-    CRuleSet *addActorRule(const QString &name,CRuleSet *rule);
+    RuleSet* ruleFactory(const QString &name);
+    RuleSet *actorRule(const QString &name);
+    RuleSet *addActorRule(const QString &name,RuleSet *rule);
     QPixmap *addPixmap(const QString &name,QPixmap *pm);
     QPixmap *pixMap(const QString &name);
     RuleMap getActor_rules() const;

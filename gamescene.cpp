@@ -4,7 +4,7 @@
 #include "consolewidget.h"
 #include "gamescene.h"
 #include "scenemanager.h"
-#include "cutilities.h"
+#include "utilities.h"
 
 
 
@@ -75,9 +75,9 @@ void GameScene::addItem(QGraphicsItem *item,const QString &name) {
 SceneActor *GameScene::addActor(const QString &name,const QString &start_action,bool moving) {
     ActorPointer actor = new SceneActor(name,gameEngine(),start_action,moving);
     addItem(actor,"Actor");
-    actor->setPos(QPointF(CUtilities::randInt(this->sceneRect().left(),this->sceneRect().right()),
-                          CUtilities::randInt(this->sceneRect().top(),this->sceneRect().bottom())));
-    actor->direction((Sprite_Direction)CUtilities::randInt(0,3));
+    actor->setPos(QPointF(Utilities::randInt(this->sceneRect().left(),this->sceneRect().right()),
+                          Utilities::randInt(this->sceneRect().top(),this->sceneRect().bottom())));
+    actor->direction((Sprite_Direction)Utilities::randInt(0,3));
     return actor;
 
 }
@@ -85,9 +85,9 @@ SceneActor *GameScene::addActor(const QString &name,const QString &start_action,
 Sprite *GameScene::addSprite(const QString &name,const QString &start_action,bool moving) {
     SpritePointer sprite = new Sprite(name,gameEngine(),moving);
     addItem(sprite,"Sprite");
-    sprite->setPos(QPointF(CUtilities::randInt(this->sceneRect().left(),this->sceneRect().right()),
-                          CUtilities::randInt(this->sceneRect().top(),this->sceneRect().bottom())));
-    sprite->direction((Sprite_Direction)CUtilities::randInt(0,3));
+    sprite->setPos(QPointF(Utilities::randInt(this->sceneRect().left(),this->sceneRect().right()),
+                          Utilities::randInt(this->sceneRect().top(),this->sceneRect().bottom())));
+    sprite->direction((Sprite_Direction)Utilities::randInt(0,3));
     return sprite;
 
 }

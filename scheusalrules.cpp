@@ -1,7 +1,7 @@
 #include "scheusalrules.h"
-#include "cutilities.h"
+#include "utilities.h"
 
-ScheusalRules::ScheusalRules(mfg::Engine *ge):CRuleSet::CRuleSet(ge) {
+ScheusalRules::ScheusalRules(mfg::Engine *ge):RuleSet::RuleSet(ge) {
 }
 
 void ScheusalRules::apply(Actor * actor) {
@@ -14,14 +14,14 @@ void ScheusalRules::apply(Actor * actor) {
                          actor->collisionState(Collision_State::FOE);
                          collides_with->collisionState(Collision_State::FOE);
                          if(collides_with->life(-5) <= 0) {
-                             actor->direction((Sprite_Direction)CUtilities::randInt(0,3));
+                             actor->direction((Sprite_Direction)Utilities::randInt(0,3));
                          }
-                         actor->direction((Sprite_Direction)CUtilities::randInt(0,3));
+                         actor->direction((Sprite_Direction)Utilities::randInt(0,3));
                 }
                 else{
                         actor->collisionState(Collision_State::FRIEND);
                         collides_with->collisionState(Collision_State::FRIEND);
-                        actor->direction((Sprite_Direction)CUtilities::randInt(0,3));
+                        actor->direction((Sprite_Direction)Utilities::randInt(0,3));
                 }
        }
     }

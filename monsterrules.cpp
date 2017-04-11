@@ -1,8 +1,8 @@
 #include "monsterrules.h"
-#include "cutilities.h"
-#include "cruleset.h"
+#include "utilities.h"
+#include "ruleset.h"
 
-MonsterRules::MonsterRules(mfg::Engine *ge): CRuleSet(ge) {
+MonsterRules::MonsterRules(mfg::Engine *ge): RuleSet(ge) {
 }
 
 void MonsterRules::apply(Actor * actor) {
@@ -14,14 +14,14 @@ void MonsterRules::apply(Actor * actor) {
                          actor->collisionState(Collision_State::FOE);
                          collides_with->collisionState(Collision_State::FOE);
                          if(collides_with->life(-3) <= 0) {
-                             actor->direction((Sprite_Direction)CUtilities::randInt(0,3));
+                             actor->direction((Sprite_Direction)Utilities::randInt(0,3));
                          }
-                         actor->direction((Sprite_Direction)CUtilities::randInt(0,3));
+                         actor->direction((Sprite_Direction)Utilities::randInt(0,3));
                 }
                 else{
                         if(actor) actor->collisionState(Collision_State::FRIEND);
                         if(collides_with) collides_with->collisionState(Collision_State::FRIEND);
-                         actor->direction((Sprite_Direction)CUtilities::randInt(0,3));
+                         actor->direction((Sprite_Direction)Utilities::randInt(0,3));
                 }
        }
     }

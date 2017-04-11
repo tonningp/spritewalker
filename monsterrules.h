@@ -1,9 +1,9 @@
 #ifndef MONSTERRULES_H
 #define MONSTERRULES_H
-#include "cruleset.h"
+#include "ruleset.h"
 
 class Actor;
-class MonsterRules : public CRuleSet
+class MonsterRules : public RuleSet
 {
 public:
     MonsterRules(mfg::Engine *ge);

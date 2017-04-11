@@ -5,7 +5,7 @@
 #include <QWidget>
 
 /**
- * @brief The ConsoleWidget class -- Provides a console for use in a Graphics scene
+ * @brief The ConsoleWidget class -- Provides a console for use in a GameScene
  */
 class ConsoleWidget : public QWidget
 {

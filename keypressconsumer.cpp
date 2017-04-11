@@ -1,14 +1,14 @@
-#include "ckeypressconsumer.h"
+#include "keypressconsumer.h"
 
 #include <QKeyEvent>
 
 #include<QDebug>
 
-CKeyPressConsumer::CKeyPressConsumer(QObject *target,QObject *parent) : QObject(parent),m_target(target) {
+KeyPressConsumer::KeyPressConsumer(QObject *target,QObject *parent) : QObject(parent),m_target(target) {
     QObject::connect(this,SIGNAL(arrowKey(QKeyEvent*)),target,SLOT(keyPressEvent(QKeyEvent*)));
 }
 
-bool CKeyPressConsumer::eventFilter(QObject *obj, QEvent *event) {
+bool KeyPressConsumer::eventFilter(QObject *obj, QEvent *event) {
     if (event->type() == QEvent::KeyPress || event->type() == QEvent::KeyRelease) {
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
             if(QSet<int>({Qt::Key_Left,Qt::Key_Right,Qt::Key_Up,Qt::Key_Down}).contains(keyEvent->key()) ||
@@ -22,10 +22,10 @@ bool CKeyPressConsumer::eventFilter(QObject *obj, QEvent *event) {
         }
 }
 
-QObject *CKeyPressConsumer::target() const {
+QObject *KeyPressConsumer::target() const {
     return m_target;
 }
 
-void CKeyPressConsumer::setTarget(QObject *target) {
+void KeyPressConsumer::setTarget(QObject *target) {
     m_target = target;
 }

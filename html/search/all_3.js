@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['herorules',['HeroRules',['../class_hero_rules.html',1,'']]]
+  ['gamescene',['GameScene',['../class_game_scene.html',1,'']]]
 ];

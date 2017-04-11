@@ -112,7 +112,7 @@ AssetManager *Engine::addAssetManager(const QString &name, AssetManager *am) {
     return am;
 }
 
-CRuleSet *Engine::ruleFactory(const QString &name) {
+RuleSet *Engine::ruleFactory(const QString &name) {
     if(name == "hero") {
         return new HeroRules(this);
     }
@@ -134,11 +134,11 @@ AssetManager *Engine::assetManager(const QString &name) {
     return m_assets[name];
 }
 
-CRuleSet *Engine::actorRule(const QString &name) {
+RuleSet *Engine::actorRule(const QString &name) {
     return m_actor_rules[name];
 }
 
-CRuleSet *Engine::addActorRule(const QString &name,CRuleSet *rule) {
+RuleSet *Engine::addActorRule(const QString &name,RuleSet *rule) {
     m_actor_rules.insert(name,rule);
     return rule;
 }

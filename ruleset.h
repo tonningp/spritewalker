@@ -1,5 +1,5 @@
-#ifndef CRULESET_H
-#define CRULESET_H
+#ifndef RULESET_H
+#define RULESET_H
 
 #include <QJsonArray>
 #include <QSet>
@@ -9,11 +9,11 @@
 #include "actor.h"
 
 typedef QSet<QString> StringSet;
-class CRuleSet
+class RuleSet
 {
     Actor* m_actor;
 public:
-    CRuleSet(mfg::Engine *ge);
+    RuleSet(mfg::Engine *ge);
     virtual void apply(Actor*) = 0;
 
     Actor* actor(Actor *actor);
@@ -29,4 +29,4 @@ protected:
 
 
 
-#endif // CRULESET_H
+#endif // RULESET_H

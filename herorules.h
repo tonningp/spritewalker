@@ -1,8 +1,8 @@
 #ifndef HERORULES_H
 #define HERORULES_H
 #include "actor.h"
-#include "cruleset.h"
-class HeroRules : public CRuleSet
+#include "ruleset.h"
+class HeroRules : public RuleSet
 {
 public:
     HeroRules(mfg::Engine *ge);

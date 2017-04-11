@@ -1,4 +1,4 @@
-#include "ckeypressconsumer.h"
+#include "keypressconsumer.h"
 #include "mainwindow.h"
 #include <QApplication>
 #include <QTime>
@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    CKeyPressConsumer *keyPressEater = new CKeyPressConsumer(&w,&a);
+    KeyPressConsumer *keyPressEater = new KeyPressConsumer(&w,&a);
     a.installEventFilter(keyPressEater);
     w.setWindowTitle("Monsters vs. Heroes");
     QTime thetime = QTime::currentTime();

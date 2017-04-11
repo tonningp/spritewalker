@@ -30,12 +30,12 @@ public:
     void speak(const QString &message);
     bool is_moving();
     void action(const QString&);
-    void addRule(CRuleSet*);
+    void addRule(RuleSet*);
     QJsonArray friends();
     QJsonArray foes();
     QJsonArray actions();
     QString primaryFightAction();
-    QVector<CRuleSet*> rules();
+    QVector<RuleSet*> rules();
     mfg::Engine *game_engine() const;
     void game_engine(mfg::Engine *game_engine);
     AssetManager *asset_manager() const;
@@ -57,7 +57,7 @@ protected:
 private:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
     void advance(int step) Q_DECL_OVERRIDE;
-    QVector<CRuleSet*> m_rules;
+    QVector<RuleSet*> m_rules;
     QString m_action;
     QString m_name;
     AssetManager* m_asset_manager;
@@ -70,7 +70,7 @@ private:
 
 
 typedef Actor SceneActor;
-typedef CRuleSet ActorRuleSet;
+typedef RuleSet ActorRuleSet;
 typedef QList<SceneActor*> ActorList;
 typedef QPointer<SceneActor> ActorPointer;
 

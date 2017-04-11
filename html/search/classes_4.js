@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lineeditwidget',['LineEditWidget',['../class_line_edit_widget.html',1,'']]]
+  ['herorules',['HeroRules',['../class_hero_rules.html',1,'']]]
 ];

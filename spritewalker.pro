@@ -25,17 +25,16 @@ SOURCES += main.cpp\
     monsterrules.cpp \
     scheusalrules.cpp \
     actorassets.cpp \
-    cruleset.cpp \
     assetmanager.cpp \
-    cutilities.cpp \
     sequentialguid.cpp \
-    lineeditwidget.cpp \
-    ckeypressconsumer.cpp \
     scenemanager.cpp \
     consolewidget.cpp \
     gameengine.cpp \
     gamescene.cpp \
-    actordialog.cpp
+    actordialog.cpp \
+    keypressconsumer.cpp \
+    ruleset.cpp \
+    utilities.cpp
 
 HEADERS  += mainwindow.h \
     sprite.h \
@@ -45,18 +44,17 @@ HEADERS  += mainwindow.h \
     monsterrules.h \
     scheusalrules.h \
     actorassets.h \
-    cruleset.h \
     assetmanager.h \
-    cutilities.h \
     typedefs.h \
     sequentialguid.h \
-    lineeditwidget.h \
-    ckeypressconsumer.h \
     scenemanager.h \
     consolewidget.h \
     gameengine.h \
     gamescene.h \
-    actordialog.h
+    actordialog.h \
+    keypressconsumer.h \
+    ruleset.h \
+    utilities.h
 
 FORMS    += mainwindow.ui \
     actordialog.ui

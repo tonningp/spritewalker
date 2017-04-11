@@ -1,6 +1,6 @@
 #include<QGraphicsScene>
 #include "actor.h"
-#include "cruleset.h"
+#include "ruleset.h"
 #include "gamescene.h"
 
 
@@ -95,7 +95,7 @@ bool Actor::is_moving() {
     return action() == "walking";
 }
 
-void Actor::addRule(CRuleSet *rule) {
+void Actor::addRule(RuleSet *rule) {
     m_rules << rule;
 }
 
@@ -115,7 +115,7 @@ QString Actor::primaryFightAction() {
     return assetmanager()->actorPrimaryFightAction();
 }
 
-QVector<CRuleSet *> Actor::rules() {
+QVector<RuleSet *> Actor::rules() {
     return m_rules;
 }
 

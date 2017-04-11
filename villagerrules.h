@@ -1,9 +1,9 @@
 #ifndef VILLAGERRULES_H
 #define VILLAGERRULES_H
 #include "actor.h"
-#include "cruleset.h"
+#include "ruleset.h"
 
-class VillagerRules : public CRuleSet
+class VillagerRules : public RuleSet
 {
 public:
     VillagerRules(mfg::Engine *ge);

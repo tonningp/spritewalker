@@ -6,10 +6,10 @@
 \mbox{\Hypertarget{class_scene_manager_a017968ad7fea883b37597ccd43ee8d21}\label{class_scene_manager_a017968ad7fea883b37597ccd43ee8d21}} 
 {\bfseries Scene\+Manager} (\hyperlink{classmfg_1_1_engine}{mfg\+::\+Engine} $\ast$engine)
 \item 
-\hyperlink{class_c_tile_scene}{C\+Tile\+Scene} $\ast$ \hyperlink{class_scene_manager_a0da379e114fea306e72feab6acc358ca}{create\+Scene} (const Q\+String \&name, C\+Object $\ast$parent)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_scene_manager_a0da379e114fea306e72feab6acc358ca}{Scene\+Manager\+::create\+Scene} creates the scene by name T\+O\+DO\+: build scene from json description if available. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_scene_manager_af55193e1b17764e710b73e92e1ec1ab3}\label{class_scene_manager_af55193e1b17764e710b73e92e1ec1ab3}} 
-\hyperlink{class_c_tile_scene}{C\+Tile\+Scene} $\ast$ {\bfseries get\+Scene} (const Q\+String \&name)
+\hyperlink{class_game_scene}{Game\+Scene} $\ast$ \hyperlink{class_scene_manager_ac862660ed44b8ab110dec97ec90a9bad}{create\+Scene} (const Q\+String \&name, C\+Object $\ast$parent)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_scene_manager_ac862660ed44b8ab110dec97ec90a9bad}{Scene\+Manager\+::create\+Scene} creates the scene by name T\+O\+DO\+: build scene from json description if available. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_scene_manager_a1f8394061bc73982c2893bb4984f4542}\label{class_scene_manager_a1f8394061bc73982c2893bb4984f4542}} 
+\hyperlink{class_game_scene}{Game\+Scene} $\ast$ {\bfseries get\+Scene} (const Q\+String \&name)
 \item 
 \mbox{\Hypertarget{class_scene_manager_a249162f1c24a0960e354a67cf9ed039d}\label{class_scene_manager_a249162f1c24a0960e354a67cf9ed039d}} 
 \hyperlink{classmfg_1_1_engine}{mfg\+::\+Engine} $\ast$ {\bfseries game\+\_\+engine} ()
@@ -26,15 +26,15 @@ Scene\+Map {\bfseries m\+\_\+scene\+\_\+map}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_scene_manager_a0da379e114fea306e72feab6acc358ca}\label{class_scene_manager_a0da379e114fea306e72feab6acc358ca}} 
+\mbox{\Hypertarget{class_scene_manager_ac862660ed44b8ab110dec97ec90a9bad}\label{class_scene_manager_ac862660ed44b8ab110dec97ec90a9bad}} 
 \index{Scene\+Manager@{Scene\+Manager}!create\+Scene@{create\+Scene}}
 \index{create\+Scene@{create\+Scene}!Scene\+Manager@{Scene\+Manager}}
 \subsubsection{\texorpdfstring{create\+Scene()}{createScene()}}
-{\footnotesize\ttfamily \hyperlink{class_c_tile_scene}{C\+Tile\+Scene} $\ast$ Scene\+Manager\+::create\+Scene (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name,  }\item[{C\+Object $\ast$}]{parent }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_game_scene}{Game\+Scene} $\ast$ Scene\+Manager\+::create\+Scene (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name,  }\item[{C\+Object $\ast$}]{parent }\end{DoxyParamCaption})}
 
 
 
-\hyperlink{class_scene_manager_a0da379e114fea306e72feab6acc358ca}{Scene\+Manager\+::create\+Scene} creates the scene by name T\+O\+DO\+: build scene from json description if available. 
+\hyperlink{class_scene_manager_ac862660ed44b8ab110dec97ec90a9bad}{Scene\+Manager\+::create\+Scene} creates the scene by name T\+O\+DO\+: build scene from json description if available. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -48,7 +48,7 @@ scene the newly created scene
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-23                                                                          \{
+23                                                                         \{
 24     QString settings;
 25     QFile file;
 26     file.setFileName(\textcolor{stringliteral}{":/config/scenes/"}+name+\textcolor{stringliteral}{".json"});
@@ -65,7 +65,7 @@ scene the newly created scene
 37     \textcolor{keywordtype}{int} y = properties[\textcolor{stringliteral}{"rect"}].toObject()[\textcolor{stringliteral}{"y"}].toInt();
 38     \textcolor{keywordtype}{int} width = properties[\textcolor{stringliteral}{"rect"}].toObject()[\textcolor{stringliteral}{"width"}].toInt();
 39     \textcolor{keywordtype}{int} height = properties[\textcolor{stringliteral}{"rect"}].toObject()[\textcolor{stringliteral}{"height"}].toInt();
-40     \hyperlink{class_c_tile_scene}{CTileScene} *scene = \textcolor{keyword}{new} \hyperlink{class_c_tile_scene}{CTileScene}(\textcolor{keyword}{this},parent,QRectF(x,y,width,height));
+40     \hyperlink{class_game_scene}{GameScene} *scene = \textcolor{keyword}{new} \hyperlink{class_game_scene}{GameScene}(\textcolor{keyword}{this},parent,QRectF(x,y,width,height));
 41     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 42     scene->gameEngine()->mediaplayer()->setPlaylist(scene->gameEngine()->mediaplaylist());
 43     scene->gameEngine()->mediaplayer()->setVolume(5);

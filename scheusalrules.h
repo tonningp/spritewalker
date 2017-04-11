@@ -1,8 +1,8 @@
 #ifndef SCHEUSALRULES_H
 #define SCHEUSALRULES_H
-#include "cruleset.h"
+#include "ruleset.h"
 
-class ScheusalRules : public CRuleSet
+class ScheusalRules : public RuleSet
 {
 public:
     ScheusalRules(mfg::Engine *ge);
