@@ -1,0 +1,159 @@
+\hypertarget{class_actor}{}\section{Actor Class Reference}
+\label{class_actor}\index{Actor@{Actor}}
+
+
+The \hyperlink{class_actor}{Actor} class -- provides a specific type of \hyperlink{class_sprite}{Sprite} that defines both non player and player characters .  
+
+
+
+
+{\ttfamily \#include $<$actor.\+h$>$}
+
+Inheritance diagram for Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_actor}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_actor_abfb178899dad2f9e42f16280c7fe31e6}\label{class_actor_abfb178899dad2f9e42f16280c7fe31e6}} 
+virtual void {\bfseries mouse\+Press\+Event} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$event) override
+\item 
+\mbox{\Hypertarget{class_actor_ad1534650c6dbffefd97662ce24f1f82c}\label{class_actor_ad1534650c6dbffefd97662ce24f1f82c}} 
+virtual void {\bfseries animate} () override
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_actor_a02fdbff16837e9f9cc74ad8ba03440e4}\label{class_actor_a02fdbff16837e9f9cc74ad8ba03440e4}} 
+{\bfseries Actor} (const Q\+String \&name, \hyperlink{classmfg_1_1_engine}{mfg\+::\+Engine} $\ast$game\+\_\+engine, const Q\+String \&start\+\_\+action, bool moving, Q\+Object $\ast$parent=0)
+\item 
+\mbox{\Hypertarget{class_actor_a192c8c34a9291eeab43db2a73315f9ca}\label{class_actor_a192c8c34a9291eeab43db2a73315f9ca}} 
+void {\bfseries connect\+Animation\+Timer} ()
+\item 
+\mbox{\Hypertarget{class_actor_a50df20e352d71fe8a4af98162f104ece}\label{class_actor_a50df20e352d71fe8a4af98162f104ece}} 
+void {\bfseries stats} (const \hyperlink{structmfg_1_1_stats}{mfg\+::\+Stats} \&)
+\item 
+\mbox{\Hypertarget{class_actor_a68a028452156d20a088348b6e558820c}\label{class_actor_a68a028452156d20a088348b6e558820c}} 
+\hyperlink{structmfg_1_1_stats}{mfg\+::\+Stats} {\bfseries stats} ()
+\item 
+\mbox{\Hypertarget{class_actor_aed5947d0b4e1dca68876f3a7e0f1d99a}\label{class_actor_aed5947d0b4e1dca68876f3a7e0f1d99a}} 
+int {\bfseries life} (int)
+\item 
+\mbox{\Hypertarget{class_actor_a5b26f0bc4b153cd35f45b568c1bf8844}\label{class_actor_a5b26f0bc4b153cd35f45b568c1bf8844}} 
+int {\bfseries life} ()
+\item 
+\mbox{\Hypertarget{class_actor_af6e1b33cb21b2ae9d70d230fdaa6ac24}\label{class_actor_af6e1b33cb21b2ae9d70d230fdaa6ac24}} 
+int {\bfseries max\+\_\+life} () const
+\item 
+\mbox{\Hypertarget{class_actor_a3e46f2e658f418e4990ed8f431794a1d}\label{class_actor_a3e46f2e658f418e4990ed8f431794a1d}} 
+void {\bfseries draw\+Stats} (Q\+Painter $\ast$)
+\item 
+\mbox{\Hypertarget{class_actor_aa8548f009a8c9dad4f5d2ddb77b28e50}\label{class_actor_aa8548f009a8c9dad4f5d2ddb77b28e50}} 
+int {\bfseries is\+Dead} ()
+\item 
+\mbox{\Hypertarget{class_actor_af0d6c18e2d77b91a45538a9db41b2744}\label{class_actor_af0d6c18e2d77b91a45538a9db41b2744}} 
+Q\+String {\bfseries name} () const override
+\item 
+\mbox{\Hypertarget{class_actor_a277f9d95d9198fd2f8623b49b3a33326}\label{class_actor_a277f9d95d9198fd2f8623b49b3a33326}} 
+Q\+String {\bfseries action} ()
+\item 
+\mbox{\Hypertarget{class_actor_a5ac76fa61c5c3d16a89576d20accae57}\label{class_actor_a5ac76fa61c5c3d16a89576d20accae57}} 
+void {\bfseries speak} (const Q\+String \&message)
+\item 
+\mbox{\Hypertarget{class_actor_a27108b4cb5241bcd4adbd0afb3e9632f}\label{class_actor_a27108b4cb5241bcd4adbd0afb3e9632f}} 
+bool {\bfseries is\+\_\+moving} ()
+\item 
+\mbox{\Hypertarget{class_actor_abca365f0bc4f7c169f1fa59985820164}\label{class_actor_abca365f0bc4f7c169f1fa59985820164}} 
+void {\bfseries action} (const Q\+String \&)
+\item 
+\mbox{\Hypertarget{class_actor_a5e95affed2e382b6ba1c61de2134362d}\label{class_actor_a5e95affed2e382b6ba1c61de2134362d}} 
+void {\bfseries add\+Rule} (\hyperlink{class_c_rule_set}{C\+Rule\+Set} $\ast$)
+\item 
+\mbox{\Hypertarget{class_actor_a716f5b635588ec9cb8d89879e4f1f81e}\label{class_actor_a716f5b635588ec9cb8d89879e4f1f81e}} 
+Q\+Json\+Array {\bfseries friends} ()
+\item 
+\mbox{\Hypertarget{class_actor_a963c28667c6a2fac64d975482ed571d7}\label{class_actor_a963c28667c6a2fac64d975482ed571d7}} 
+Q\+Json\+Array {\bfseries foes} ()
+\item 
+\mbox{\Hypertarget{class_actor_a07d30fbeb6db8a0fd3d76ed309aaa27e}\label{class_actor_a07d30fbeb6db8a0fd3d76ed309aaa27e}} 
+Q\+Json\+Array {\bfseries actions} ()
+\item 
+\mbox{\Hypertarget{class_actor_a33e69369909a1124c509df8730277f9a}\label{class_actor_a33e69369909a1124c509df8730277f9a}} 
+Q\+String {\bfseries primary\+Fight\+Action} ()
+\item 
+\mbox{\Hypertarget{class_actor_ae5cd3908883f762b385b0425c47bebbf}\label{class_actor_ae5cd3908883f762b385b0425c47bebbf}} 
+Q\+Vector$<$ \hyperlink{class_c_rule_set}{C\+Rule\+Set} $\ast$ $>$ {\bfseries rules} ()
+\item 
+\mbox{\Hypertarget{class_actor_abfdaca3d60f8be25ad5d310fbded3fab}\label{class_actor_abfdaca3d60f8be25ad5d310fbded3fab}} 
+\hyperlink{classmfg_1_1_engine}{mfg\+::\+Engine} $\ast$ {\bfseries game\+\_\+engine} () const
+\item 
+\mbox{\Hypertarget{class_actor_a1ac165109ea83ae088f67213a9fe9500}\label{class_actor_a1ac165109ea83ae088f67213a9fe9500}} 
+void {\bfseries game\+\_\+engine} (\hyperlink{classmfg_1_1_engine}{mfg\+::\+Engine} $\ast$game\+\_\+engine)
+\item 
+\mbox{\Hypertarget{class_actor_acffb540df7518225c58da445d271fd86}\label{class_actor_acffb540df7518225c58da445d271fd86}} 
+\hyperlink{class_asset_manager}{Asset\+Manager} $\ast$ {\bfseries asset\+\_\+manager} () const
+\item 
+\mbox{\Hypertarget{class_actor_a1acf47e3cba338cf7affaf0116970236}\label{class_actor_a1acf47e3cba338cf7affaf0116970236}} 
+Q\+Painter\+Path {\bfseries shape} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_actor_a8b92acf4b839678301491ca5ecd7580d}\label{class_actor_a8b92acf4b839678301491ca5ecd7580d}} 
+void {\bfseries build\+Actor\+Page\+Coordinates} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_actor_ab2820addeaf0b6b2949c2421cc228038}\label{class_actor_ab2820addeaf0b6b2949c2421cc228038}} 
+virtual void {\bfseries change\+Animation\+Frames} (\hyperlink{class_sprite}{Sprite} $\ast$sprite)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_actor_a4265436c1b899cd3d78dab0e0b255579}\label{class_actor_a4265436c1b899cd3d78dab0e0b255579}} 
+void {\bfseries paint} (Q\+Painter $\ast$painter, const Q\+Style\+Option\+Graphics\+Item $\ast$option, Q\+Widget $\ast$widget) override
+\item 
+\mbox{\Hypertarget{class_actor_a4aa7f044ffb6dfa5f8ebf243243ee462}\label{class_actor_a4aa7f044ffb6dfa5f8ebf243243ee462}} 
+void \hyperlink{class_actor_a4aa7f044ffb6dfa5f8ebf243243ee462}{advance} (int step) Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\begin{DoxyCompactList}\small\item\em Sprite\+::next\+Frame Will set the frame as well as the position of the sprite in the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_actor_a6ceacbad9e2f687e035f1dbb6025b41e}\label{class_actor_a6ceacbad9e2f687e035f1dbb6025b41e}} 
+\hyperlink{structmfg_1_1_stats}{mfg\+::\+Stats} {\bfseries m\+\_\+stats}
+\item 
+\mbox{\Hypertarget{class_actor_a5e7b5f03b4aef4a5164bba8df67e6043}\label{class_actor_a5e7b5f03b4aef4a5164bba8df67e6043}} 
+Q\+Vector$<$ \hyperlink{class_c_rule_set}{C\+Rule\+Set} $\ast$ $>$ {\bfseries m\+\_\+rules}
+\item 
+\mbox{\Hypertarget{class_actor_ae3c7bb3e0a6548749b14b6d38b5b50ac}\label{class_actor_ae3c7bb3e0a6548749b14b6d38b5b50ac}} 
+Q\+String {\bfseries m\+\_\+action}
+\item 
+\mbox{\Hypertarget{class_actor_a487d4e428e72810694df2bc7885f3cff}\label{class_actor_a487d4e428e72810694df2bc7885f3cff}} 
+Q\+String {\bfseries m\+\_\+name}
+\item 
+\mbox{\Hypertarget{class_actor_a68280d58a3ca52e36b826dcce8d4599b}\label{class_actor_a68280d58a3ca52e36b826dcce8d4599b}} 
+\hyperlink{class_asset_manager}{Asset\+Manager} $\ast$ {\bfseries m\+\_\+asset\+\_\+manager}
+\item 
+\mbox{\Hypertarget{class_actor_aab6640a44131bbabd6f02bc396afdbf0}\label{class_actor_aab6640a44131bbabd6f02bc396afdbf0}} 
+\hyperlink{classmfg_1_1_engine}{mfg\+::\+Engine} $\ast$ {\bfseries m\+\_\+game\+\_\+engine}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_actor_af3ffe8761cd2ebd2b92033654d49a2e7}\label{class_actor_af3ffe8761cd2ebd2b92033654d49a2e7}} 
+\hyperlink{class_actor}{Actor} $\ast$ {\bfseries operator$<$$<$} (\hyperlink{class_actor}{Actor} $\ast$actor, const Q\+String \&message)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_actor}{Actor} class -- provides a specific type of \hyperlink{class_sprite}{Sprite} that defines both non player and player characters . 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+actor.\+h\item 
+actor.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,162 @@
+\hypertarget{class_c_tile_scene}{}\section{C\+Tile\+Scene Class Reference}
+\label{class_c_tile_scene}\index{C\+Tile\+Scene@{C\+Tile\+Scene}}
+Inheritance diagram for C\+Tile\+Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_tile_scene}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a67ae697d823dfa1a23eb5a2541f2adc6}\label{class_c_tile_scene_a67ae697d823dfa1a23eb5a2541f2adc6}} 
+void {\bfseries sprite\+Selected} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$, \hyperlink{class_sprite}{Sprite} $\ast$)
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a4b8b37c1cbd53a099b0a5dc42e3a5ff1}\label{class_c_tile_scene_a4b8b37c1cbd53a099b0a5dc42e3a5ff1}} 
+void {\bfseries advance} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a5cf683b2bb5559b5d29d5c5d426faa69}\label{class_c_tile_scene_a5cf683b2bb5559b5d29d5c5d426faa69}} 
+void {\bfseries actor\+Collision} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a27f6fe343e7ca099fa3a5b90b9bd227f}\label{class_c_tile_scene_a27f6fe343e7ca099fa3a5b90b9bd227f}} 
+{\bfseries C\+Tile\+Scene} (\hyperlink{class_scene_manager}{Scene\+Manager} $\ast$sm, Q\+Object $\ast$parent=0, const Q\+RectF \&rect=Q\+RectF(-\/300,-\/300, 600, 600))
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_ae1d5a49f90032db74ac86d1dca1f07b2}\label{class_c_tile_scene_ae1d5a49f90032db74ac86d1dca1f07b2}} 
+void {\bfseries connect\+Timer} (Q\+Timer $\ast$)
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_afb80cf098ed78c1c8d9c0e1500e145bd}\label{class_c_tile_scene_afb80cf098ed78c1c8d9c0e1500e145bd}} 
+void {\bfseries draw\+Grid} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_aaad125b8512818114c41b96781636aff}\label{class_c_tile_scene_aaad125b8512818114c41b96781636aff}} 
+void {\bfseries add\+Item} (Q\+Graphics\+Item $\ast$item, const Q\+String \&name)
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_abfed42d6cd9d830be950424c20edda89}\label{class_c_tile_scene_abfed42d6cd9d830be950424c20edda89}} 
+\hyperlink{class_actor}{Scene\+Actor} $\ast$ {\bfseries add\+Actor} (const Q\+String \&name, const Q\+String \&start\+\_\+action, bool moving)
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a57a63442391636814109c89a77f61d59}\label{class_c_tile_scene_a57a63442391636814109c89a77f61d59}} 
+\hyperlink{class_sprite}{Sprite} $\ast$ {\bfseries add\+Sprite} (const Q\+String \&name, const Q\+String \&start\+\_\+action, bool moving)
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a6a969e412f6e8545147af0ba497af4a1}\label{class_c_tile_scene_a6a969e412f6e8545147af0ba497af4a1}} 
+void {\bfseries remove\+Actor} (\hyperlink{class_actor}{Scene\+Actor} $\ast$)
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_ac13ea7011de0c3e9bd265d0394f39db5}\label{class_c_tile_scene_ac13ea7011de0c3e9bd265d0394f39db5}} 
+\hyperlink{class_sprite}{Sprite} $\ast$ {\bfseries current\+\_\+sprite} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_aa7a986b98b756412e5a2d005c4f1ff14}\label{class_c_tile_scene_aa7a986b98b756412e5a2d005c4f1ff14}} 
+\hyperlink{class_sprite}{Sprite} $\ast$ {\bfseries current\+\_\+sprite} (\hyperlink{class_sprite}{Sprite} $\ast$)
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a3e0eef8a67dff7ddd479f918799dc2f3}\label{class_c_tile_scene_a3e0eef8a67dff7ddd479f918799dc2f3}} 
+Actor\+Count\+Map {\bfseries get\+Actor\+Counts} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_aa24304804db212df205d79bfe8c1b98e}\label{class_c_tile_scene_aa24304804db212df205d79bfe8c1b98e}} 
+Actor\+List {\bfseries get\+All\+Actors} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a434168bf9ebfbcc6cec3147438f3c2a6}\label{class_c_tile_scene_a434168bf9ebfbcc6cec3147438f3c2a6}} 
+Q\+Vector$<$ Q\+String $>$ {\bfseries players} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_ab862b901cd16cdd0aca01d8c0603c7e6}\label{class_c_tile_scene_ab862b901cd16cdd0aca01d8c0603c7e6}} 
+int {\bfseries dead\+Count} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a331440f7dceada3d9dd2032e66f53091}\label{class_c_tile_scene_a331440f7dceada3d9dd2032e66f53091}} 
+void {\bfseries clear\+Dead} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_ab5c61870b7b0361765504160b6420a8c}\label{class_c_tile_scene_ab5c61870b7b0361765504160b6420a8c}} 
+bool {\bfseries is\+Scene\+Actor} (Q\+Graphics\+Item $\ast$item)
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a3e8bb4fd9b53bd8ef85e9fb805b90274}\label{class_c_tile_scene_a3e8bb4fd9b53bd8ef85e9fb805b90274}} 
+void {\bfseries clear\+Actors} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_acdc455278db4d61b7cf7fcb200122193}\label{class_c_tile_scene_acdc455278db4d61b7cf7fcb200122193}} 
+Graphics\+Item\+List {\bfseries get\+Deadlist} () const
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_ae1907597b192970a4cac1d743cf313e8}\label{class_c_tile_scene_ae1907597b192970a4cac1d743cf313e8}} 
+void {\bfseries set\+Deadlist} (const Graphics\+Item\+List \&deadlist)
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_aee932ad39048d694ac18fa91c991ba54}\label{class_c_tile_scene_aee932ad39048d694ac18fa91c991ba54}} 
+Q\+Time {\bfseries current\+\_\+time} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a28fedd460d2fbc672bcd7c7e004d0453}\label{class_c_tile_scene_a28fedd460d2fbc672bcd7c7e004d0453}} 
+Q\+Graphics\+Item $\ast$ {\bfseries set\+Background\+Image\+By\+Name} (const Q\+String \&name)
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a577377486bf7a95a1f05dcd0b6b73b66}\label{class_c_tile_scene_a577377486bf7a95a1f05dcd0b6b73b66}} 
+\hyperlink{classmfg_1_1_engine}{mfg\+::\+Engine} $\ast$ {\bfseries game\+Engine} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a2824e9b0dc456cb36fb352d5e1e2bc11}\label{class_c_tile_scene_a2824e9b0dc456cb36fb352d5e1e2bc11}} 
+\hyperlink{class_console_widget}{Console\+Widget} $\ast$ {\bfseries console} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a927d805f00a584205fb85ff0ac789159}\label{class_c_tile_scene_a927d805f00a584205fb85ff0ac789159}} 
+\hyperlink{class_scene_manager}{Scene\+Manager} $\ast$ {\bfseries scene\+Manager} () const
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a36fa9b189ceb8af34cb56e7511d10cc9}\label{class_c_tile_scene_a36fa9b189ceb8af34cb56e7511d10cc9}} 
+void {\bfseries scene\+Manager} (\hyperlink{class_scene_manager}{Scene\+Manager} $\ast$scene\+Manager)
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a6e7bbbf46ba0599360dcf260c0ea51d6}\label{class_c_tile_scene_a6e7bbbf46ba0599360dcf260c0ea51d6}} 
+Q\+Timer $\ast$ {\bfseries timer} ()
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_adf402725eafba3102f56798eb5101830}\label{class_c_tile_scene_adf402725eafba3102f56798eb5101830}} 
+Q\+String {\bfseries name} () const
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_af722faee0fb192f315a3b87ca9ae28a1}\label{class_c_tile_scene_af722faee0fb192f315a3b87ca9ae28a1}} 
+void {\bfseries set\+Name} (const Q\+String \&name)
+\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_c_tile_scene_aa1bc804521eaeb9e070c609c3c53f7eb}{mouse\+Move\+Event} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$mouse\+Event) override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a08a8f5f56b6ec92aead51e179b6fed8c}\label{class_c_tile_scene_a08a8f5f56b6ec92aead51e179b6fed8c}} 
+Q\+String {\bfseries m\+\_\+name}
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a8a45d16d8d29220cec9f2de2cd797907}\label{class_c_tile_scene_a8a45d16d8d29220cec9f2de2cd797907}} 
+\hyperlink{class_sprite}{Sprite} $\ast$ {\bfseries m\+\_\+current\+\_\+sprite}
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_aa5881cbedaf7e2e19863b6c268a1912f}\label{class_c_tile_scene_aa5881cbedaf7e2e19863b6c268a1912f}} 
+\hyperlink{classmfg_1_1_engine}{mfg\+::\+Engine} $\ast$ {\bfseries m\+\_\+game\+\_\+engine}
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_aecceb8c9afaada479dca30b81199a8a6}\label{class_c_tile_scene_aecceb8c9afaada479dca30b81199a8a6}} 
+\hyperlink{class_scene_manager}{Scene\+Manager} $\ast$ {\bfseries m\+\_\+scene\+\_\+manager}
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a384cd8d8692e5d637660b24eaac49849}\label{class_c_tile_scene_a384cd8d8692e5d637660b24eaac49849}} 
+Graphics\+Item\+List {\bfseries m\+\_\+deadlist}
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a4fe2c6163a5268ef00fac6e002a38d7c}\label{class_c_tile_scene_a4fe2c6163a5268ef00fac6e002a38d7c}} 
+Q\+Time {\bfseries m\+\_\+current\+\_\+time}
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a7a5c6e6553c9bd0e09a63475bf5a476d}\label{class_c_tile_scene_a7a5c6e6553c9bd0e09a63475bf5a476d}} 
+Q\+Timer $\ast$ {\bfseries m\+\_\+timer}
+\item 
+\mbox{\Hypertarget{class_c_tile_scene_a797b97e5e32f38d441c3298a06edc726}\label{class_c_tile_scene_a797b97e5e32f38d441c3298a06edc726}} 
+\hyperlink{class_console_widget}{Console\+Widget} $\ast$ {\bfseries m\+\_\+console}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_tile_scene_aa1bc804521eaeb9e070c609c3c53f7eb}\label{class_c_tile_scene_aa1bc804521eaeb9e070c609c3c53f7eb}} 
+\index{C\+Tile\+Scene@{C\+Tile\+Scene}!mouse\+Move\+Event@{mouse\+Move\+Event}}
+\index{mouse\+Move\+Event@{mouse\+Move\+Event}!C\+Tile\+Scene@{C\+Tile\+Scene}}
+\subsubsection{\texorpdfstring{mouse\+Move\+Event}{mouseMoveEvent}}
+{\footnotesize\ttfamily void C\+Tile\+Scene\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Scene\+Mouse\+Event $\ast$}]{mouse\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse\+Event} & Need to set\+Mouse\+Tracking = true in the view \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+237                                                                     \{
+238     QGraphicsScene::mouseMoveEvent(mouseEvent);
+239 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ctilescene.\+h\item 
+ctilescene.\+cpp\end{DoxyCompactItemize}

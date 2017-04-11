@@ -1,5 +1,5 @@
 #include "actordialog.h"
-#include "ui_cactordialog.h"
+#include "ui_actordialog.h"
 
 ActorDialog::ActorDialog(QWidget *parent,SceneActor* s_actor) :
     QDialog(parent),
