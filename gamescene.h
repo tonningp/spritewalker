@@ -1,5 +1,5 @@
-#ifndef CTILESCENE_H
-#define CTILESCENE_H
+#ifndef GAMESCENE_H
+#define GAMESCENE_H
 
 #include <QGraphicsItem>
 #include <QGraphicsScene>
@@ -12,13 +12,16 @@ namespace mfg {
 class Sprite;
 class Actor;
 class SceneManager;
-class CConsoleWidget;
+class ConsoleWidget;
 typedef Actor SceneActor;
 typedef QList<SceneActor*> ActorList;
 typedef QMap<QString,int> ActorCountMap;
 typedef QList<QGraphicsItem*> GraphicsItemList;
 
-class CTileScene : public QGraphicsScene
+/**
+ * @brief The GameScene class -- creates a graphic scene used for game play
+ */
+class GameScene : public QGraphicsScene
 {
     Q_OBJECT
 
@@ -29,10 +32,10 @@ class CTileScene : public QGraphicsScene
     GraphicsItemList m_deadlist;
     QTime m_current_time;
     QTimer *m_timer;
-    CConsoleWidget *m_console;
+    ConsoleWidget *m_console;
 
 public:
-    explicit CTileScene(SceneManager* sm,QObject *parent = 0,const QRectF &rect=QRectF(-300,-300,600,600));
+    explicit GameScene(SceneManager* sm,QObject *parent = 0,const QRectF &rect=QRectF(-300,-300,600,600));
     void connectTimer(QTimer*);
     void drawGrid();
     void addItem(QGraphicsItem* item,const QString &name);
@@ -53,7 +56,7 @@ public:
     QTime current_time();
     QGraphicsItem* setBackgroundImageByName(const QString& name);
     mfg::Engine *gameEngine();
-    CConsoleWidget *console();
+    ConsoleWidget *console();
 
     SceneManager *sceneManager() const;
     void sceneManager(SceneManager *sceneManager);
@@ -74,4 +77,4 @@ public slots:
     void actorCollision();
 };
 
-#endif // CTILESCENE_H
+#endif // GAMESCENE_H

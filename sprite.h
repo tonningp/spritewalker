@@ -9,7 +9,7 @@
 #include <QPair>
 #include <QPointer>
 #include "sequentialguid.h"
-#include "cgameengine.h"
+#include "gameengine.h"
 
 class Sprite;
 typedef QList<Sprite*> SpriteList;

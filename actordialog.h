@@ -1,20 +1,20 @@
-#ifndef CACTORDIALOG_H
-#define CACTORDIALOG_H
+#ifndef ACTORDIALOG_H
+#define ACTORDIALOG_H
 #include "actor.h"
 
 #include <QDialog>
 
 namespace Ui {
-class CActorDialog;
+class ActorDialog;
 }
 
-class CActorDialog : public QDialog
+class ActorDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit CActorDialog(QWidget* parent,SceneActor* actor);
-    ~CActorDialog();
+    explicit ActorDialog(QWidget* parent,SceneActor* actor);
+    ~ActorDialog();
 
     ActorPointer actor() const;
     void actor(SceneActor *actor);
@@ -27,7 +27,7 @@ private slots:
     void directionChanged();
 
 private:
-    Ui::CActorDialog *ui;
+    Ui::ActorDialog *ui;
     ActorPointer m_actor;
     bool m_ready;
 

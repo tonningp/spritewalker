@@ -19,7 +19,6 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     sprite.cpp \
-    ctilescene.cpp \
     actor.cpp \
     herorules.cpp \
     villagerrules.cpp \
@@ -28,18 +27,18 @@ SOURCES += main.cpp\
     actorassets.cpp \
     cruleset.cpp \
     assetmanager.cpp \
-    cactordialog.cpp \
     cutilities.cpp \
-    cgameengine.cpp \
     sequentialguid.cpp \
     lineeditwidget.cpp \
-    cconsolewidget.cpp \
     ckeypressconsumer.cpp \
-    scenemanager.cpp
+    scenemanager.cpp \
+    consolewidget.cpp \
+    gameengine.cpp \
+    gamescene.cpp \
+    actordialog.cpp
 
 HEADERS  += mainwindow.h \
     sprite.h \
-    ctilescene.h \
     actor.h \
     herorules.h \
     villagerrules.h \
@@ -48,18 +47,19 @@ HEADERS  += mainwindow.h \
     actorassets.h \
     cruleset.h \
     assetmanager.h \
-    cactordialog.h \
     cutilities.h \
-    cgameengine.h \
     typedefs.h \
     sequentialguid.h \
     lineeditwidget.h \
-    cconsolewidget.h \
     ckeypressconsumer.h \
-    scenemanager.h
+    scenemanager.h \
+    consolewidget.h \
+    gameengine.h \
+    gamescene.h \
+    actordialog.h
 
 FORMS    += mainwindow.ui \
-    cactordialog.ui
+    actordialog.ui
 
 RESOURCES += \
     resources.qrc

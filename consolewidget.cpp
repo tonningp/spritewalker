@@ -1,4 +1,4 @@
-#include "cconsolewidget.h"
+#include "consolewidget.h"
 
 #include <QDialogButtonBox>
 #include <QGridLayout>
@@ -7,11 +7,11 @@
 #include <QPushButton>
 
 
-CConsoleWidget::CConsoleWidget(QWidget *parent) : QWidget(parent) {
+ConsoleWidget::ConsoleWidget(QWidget *parent) : QWidget(parent) {
     QPushButton *send = new QPushButton("Send to Actor",this);
     QPushButton *button = new QPushButton("Close",this);
-    connect(button,&QPushButton::clicked,this,&CConsoleWidget::sendText);
-    connect(button,&QPushButton::clicked,this,&CConsoleWidget::hide);
+    connect(button,&QPushButton::clicked,this,&ConsoleWidget::sendText);
+    connect(button,&QPushButton::clicked,this,&ConsoleWidget::hide);
     QVBoxLayout *layout = new QVBoxLayout;
 
     m_textedit = new QTextEdit(this);
@@ -23,11 +23,11 @@ CConsoleWidget::CConsoleWidget(QWidget *parent) : QWidget(parent) {
     setLayout(layout);
 }
 
-QTextEdit *CConsoleWidget::textedit() const
+QTextEdit *ConsoleWidget::textedit() const
 {
     return m_textedit;
 }
 
-void CConsoleWidget::sendText() {
+void ConsoleWidget::sendText() {
     emit signalText(m_textedit->toPlainText().toLatin1().data());
 }

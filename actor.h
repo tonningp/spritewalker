@@ -1,12 +1,15 @@
 #ifndef ACTOR_H
 #define ACTOR_H
 #include "sprite.h"
-#include "cgameengine.h"
+#include "gameengine.h"
 #include <QGraphicsSceneMouseEvent>
 #include <QPointer>
 
 
-
+/**
+ * @brief The Actor class -- provides a specific type of Sprite that defines both non player and player characters
+ * @description
+ */
 class Actor : public Sprite {
 
     mfg::Stats m_stats;

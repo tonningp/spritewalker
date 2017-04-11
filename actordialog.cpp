@@ -1,9 +1,9 @@
-#include "cactordialog.h"
+#include "actordialog.h"
 #include "ui_cactordialog.h"
 
-CActorDialog::CActorDialog(QWidget *parent,SceneActor* s_actor) :
+ActorDialog::ActorDialog(QWidget *parent,SceneActor* s_actor) :
     QDialog(parent),
-    ui(new Ui::CActorDialog),
+    ui(new Ui::ActorDialog),
     m_ready(false)
 {
     actor(s_actor),
@@ -28,38 +28,38 @@ CActorDialog::CActorDialog(QWidget *parent,SceneActor* s_actor) :
     ready(true);
 }
 
-CActorDialog::~CActorDialog()
+ActorDialog::~ActorDialog()
 {
     delete ui;
 }
 
-void CActorDialog::actionChanged() {
+void ActorDialog::actionChanged() {
     if(ready() && actor())
        actor()->action(ui->cb_action->currentText());
 }
 
-void CActorDialog::directionChanged() {
+void ActorDialog::directionChanged() {
     if(ready() && actor())
        actor()->direction((Sprite_Direction)ui->cb_direction->currentIndex());
 
 }
 
-bool CActorDialog::ready() const
+bool ActorDialog::ready() const
 {
     return m_ready;
 }
 
-void CActorDialog::ready(bool ready)
+void ActorDialog::ready(bool ready)
 {
     m_ready = ready;
 }
 
-ActorPointer CActorDialog::actor() const
+ActorPointer ActorDialog::actor() const
 {
     return m_actor;
 }
 
-void CActorDialog::actor(SceneActor *actor)
+void ActorDialog::actor(SceneActor *actor)
 {
     m_actor = actor;
 }

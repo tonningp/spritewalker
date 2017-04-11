@@ -1,7 +1,7 @@
 #include<QGraphicsScene>
 #include "actor.h"
 #include "cruleset.h"
-#include "ctilescene.h"
+#include "gamescene.h"
 
 
 
@@ -208,7 +208,7 @@ void Actor::animate() {
     //if(!step) return;
     Sprite::animate();
     advance_frame(1);
-    int elapsed = ((CTileScene*)scene())->current_time().elapsed();
+    int elapsed = ((GameScene*)scene())->current_time().elapsed();
     if(elapsed > 1) {
         m_current_frame++;
         distance+=2.0;

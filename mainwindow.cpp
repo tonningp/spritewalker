@@ -1,4 +1,4 @@
-#include "cconsolewidget.h"
+#include "consolewidget.h"
 #include "ui_mainwindow.h"
 
 #include <QGraphicsProxyWidget>
@@ -6,9 +6,9 @@
 #include <QTextBlock>
 #include <QTime>
 #include "mainwindow.h"
-#include "cactordialog.h"
+#include "actordialog.h"
 #include "actor.h"
-#include "cgameengine.h"
+#include "gameengine.h"
 #include "scenemanager.h"
 
 
@@ -124,6 +124,13 @@ void MainWindow::createMenus()
 
 }
 
+/**
+ * @brief MainWindow::createAction create a menu action
+ * @param menu
+ * @param shortcut
+ * @param tip
+ * @return *QAction
+ */
 QAction *MainWindow::createAction(const QString &menu, const QKeySequence &shortcut,const QString &tip) {
     QAction *newAct = new QAction(tr(menu.toLatin1().data()), this);
     newAct->setShortcut(shortcut);
@@ -132,6 +139,9 @@ QAction *MainWindow::createAction(const QString &menu, const QKeySequence &short
 }
 
 #include<QDebug>
+/**
+ * @brief MainWindow::newFile -- TODO
+ */
 void MainWindow::newFile() {
     qDebug() << "TODO: newFile";
 }
@@ -201,7 +211,7 @@ void MainWindow::addMountain() {
     SpritePointer sprite = scene()->addSprite("mountain","stationary",false);
     sprite->setZValue(-100);
     connect(sprite,&Sprite::spriteClick,this,&MainWindow::actorClicked);
-    connect(sprite,&Sprite::spriteClick,scene(),&CTileScene::spriteSelected);
+    connect(sprite,&Sprite::spriteClick,scene(),&GameScene::spriteSelected);
 }
 
 void MainWindow::showConsole() {
@@ -227,7 +237,7 @@ void MainWindow::consoleText(const char *s) {
 SceneActor *MainWindow::addActor(const QString& name) {
     ActorPointer actor = scene()->addActor(name,"walking",false);
     connect(actor,&Sprite::spriteClick,this,&MainWindow::actorClicked);
-    connect(actor,&Sprite::spriteClick,scene(),&CTileScene::spriteSelected);
+    connect(actor,&Sprite::spriteClick,scene(),&GameScene::spriteSelected);
     //connect(actor,&Sprite::spriteMove,this,&MainWindow::updateSpritePosition);
     return actor;
 }
@@ -247,7 +257,7 @@ void MainWindow::actorClicked(QGraphicsSceneMouseEvent* event,Sprite* sprite) {
                             +QString::number(current_sprite()->pos().y()));
 
     if(event->button() == Qt::RightButton && scene()->isSceneActor(current_sprite())) {
-        CActorDialog *dlg = new CActorDialog(0,(SceneActor*)current_sprite());
+        ActorDialog *dlg = new ActorDialog(0,(SceneActor*)current_sprite());
         dlg->show();
     }
 }
@@ -300,11 +310,11 @@ void MainWindow::startScene() {
 }
 
 
-CTileScene* MainWindow::scene() {
+GameScene* MainWindow::scene() {
     return m_scene;
 }
 
-void MainWindow::scene(CTileScene *scene) {
+void MainWindow::scene(GameScene *scene) {
    m_scene = scene;
 }
 
@@ -429,7 +439,7 @@ void MainWindow::moveSprite(Sprite_Direction direction) {
     }
 }
 
-CConsoleWidget *MainWindow::console() const
+ConsoleWidget *MainWindow::console() const
 {
     return m_console;
 }

@@ -1,5 +1,5 @@
-#ifndef CGAMEENGINE_H
-#define CGAMEENGINE_H
+#ifndef GAMEENGINE_H
+#define GAMEENGINE_H
 
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
@@ -58,4 +58,4 @@ public:
 
 };
 
-#endif // CGAMEENGINE_H
+#endif // GAMEENGINE_H

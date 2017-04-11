@@ -5,7 +5,7 @@
 #include <QSet>
 #include <QString>
 
-#include "cgameengine.h"
+#include "gameengine.h"
 #include "actor.h"
 
 typedef QSet<QString> StringSet;

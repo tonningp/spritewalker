@@ -4,8 +4,8 @@
 
 class QObject;
 class QString;
-class CTileScene;
-typedef QMap<QString,CTileScene*> SceneMap;
+class GameScene;
+typedef QMap<QString,GameScene*> SceneMap;
 typedef QObject CObject;
 
 namespace mfg {
@@ -18,8 +18,8 @@ class SceneManager
     SceneMap m_scene_map;
 public:
     SceneManager(mfg::Engine *engine);
-    CTileScene *createScene(const QString &name, CObject *parent);
-    CTileScene *getScene(const QString &name);
+    GameScene *createScene(const QString &name, CObject *parent);
+    GameScene *getScene(const QString &name);
     mfg::Engine *game_engine();
 };
 

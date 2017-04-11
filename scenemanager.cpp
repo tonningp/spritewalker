@@ -2,10 +2,10 @@
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include "ctilescene.h"
-#include "cgameengine.h"
+#include "gamescene.h"
+#include "gameengine.h"
 #include "scenemanager.h"
-#include "cconsolewidget.h"
+#include "consolewidget.h"
 
 SceneManager::SceneManager(mfg::Engine *engine) : m_engine(engine) {
 
@@ -20,7 +20,7 @@ SceneManager::SceneManager(mfg::Engine *engine) : m_engine(engine) {
  * @return scene the newly created scene
  */
 #include<QDebug>
-CTileScene *SceneManager::createScene(const QString &name,QObject* parent) {
+GameScene *SceneManager::createScene(const QString &name,QObject* parent) {
     QString settings;
     QFile file;
     file.setFileName(":/config/scenes/"+name+".json");
@@ -37,7 +37,7 @@ CTileScene *SceneManager::createScene(const QString &name,QObject* parent) {
     int y = properties["rect"].toObject()["y"].toInt();
     int width = properties["rect"].toObject()["width"].toInt();
     int height = properties["rect"].toObject()["height"].toInt();
-    CTileScene *scene = new CTileScene(this,parent,QRectF(x,y,width,height));
+    GameScene *scene = new GameScene(this,parent,QRectF(x,y,width,height));
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
     scene->gameEngine()->mediaplayer()->setPlaylist(scene->gameEngine()->mediaplaylist());
     scene->gameEngine()->mediaplayer()->setVolume(5);
@@ -55,7 +55,7 @@ CTileScene *SceneManager::createScene(const QString &name,QObject* parent) {
     return scene;
 }
 
-CTileScene *SceneManager::getScene(const QString &name) {
+GameScene *SceneManager::getScene(const QString &name) {
     return m_scene_map[name];
 }
 

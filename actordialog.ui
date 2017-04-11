@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CActorDialog</class>
- <widget class="QDialog" name="CActorDialog">
+ <class>ActorDialog</class>
+ <widget class="QDialog" name="ActorDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -219,7 +219,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>CActorDialog</receiver>
+   <receiver>ActorDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -235,7 +235,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>CActorDialog</receiver>
+   <receiver>ActorDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -251,7 +251,7 @@
   <connection>
    <sender>cb_direction</sender>
    <signal>currentIndexChanged(int)</signal>
-   <receiver>CActorDialog</receiver>
+   <receiver>ActorDialog</receiver>
    <slot>directionChanged()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -267,7 +267,7 @@
   <connection>
    <sender>cb_action</sender>
    <signal>currentIndexChanged(int)</signal>
-   <receiver>CActorDialog</receiver>
+   <receiver>ActorDialog</receiver>
    <slot>actionChanged()</slot>
    <hints>
     <hint type="sourcelabel">

@@ -6,9 +6,9 @@
 #include <QMediaPlayer>
 #include <QTimer>
 #include "typedefs.h"
-#include "ctilescene.h"
+#include "gamescene.h"
 #include "sprite.h"
-#include "cconsolewidget.h"
+#include "consolewidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,7 +18,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-    CTileScene *m_scene;
+    GameScene *m_scene;
     QGraphicsRectItem *rectangle;
     QGraphicsEllipseItem *ellipse;
     QGraphicsTextItem *text;
@@ -28,20 +28,20 @@ class MainWindow : public QMainWindow
     void moveSprite(Sprite_Direction);
     QMediaPlayer *m_player;
     KeyState m_key_state;
-    CConsoleWidget *m_console;
+    ConsoleWidget *m_console;
 
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    CTileScene* scene();
-    void scene(CTileScene*);
+    GameScene* scene();
+    void scene(GameScene*);
     QTimer *timer();
     void timer(QTimer*);
     QMediaPlayer *mediaplayer() const;
     void mediaplayer(QMediaPlayer *mediaplayer);
     QLabel *status_label() const;
     void status_label(QLabel *status_label);
-    CConsoleWidget *console() const;
+    ConsoleWidget *console() const;
 
     void showScene(const QString &name);
 public slots:
