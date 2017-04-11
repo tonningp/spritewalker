@@ -1,0 +1,8 @@
+{
+    "name" : "melba01",
+    "fullname" : "Scene for The Legend of Melba",
+    "properties" : {
+            "rect" : {"x" : -475,"y" : -300, "width" : 950, "height" : 600},
+            "background" : "background01"
+    }
+}

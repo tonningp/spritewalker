@@ -1,0 +1,7 @@
+{
+    "name" : "space01",
+    "fullname" : "Scene for The Space Game",
+    "properties" : {
+            "rect" : {"x" : -475,"y" : -300, "width" : 950, "height" : 600}
+    }
+}

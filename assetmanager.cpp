@@ -13,7 +13,7 @@ AssetManager::AssetManager(const QString& name) {
 void AssetManager::init(const QString &name) {
     QString settings;
     QFile file;
-    file.setFileName(":/config/"+name+".json");
+    file.setFileName(":/config/characters/"+name+".json");
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     settings = file.readAll();
     file.close();

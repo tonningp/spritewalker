@@ -1,4 +1,7 @@
 #include <QGraphicsProxyWidget>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include "ctilescene.h"
 #include "cgameengine.h"
 #include "scenemanager.h"
@@ -16,14 +19,31 @@ SceneManager::SceneManager(mfg::Engine *engine) : m_engine(engine) {
  * @param parent the parent for the scene, usually the main window
  * @return scene the newly created scene
  */
+#include<QDebug>
 CTileScene *SceneManager::createScene(const QString &name,QObject* parent) {
-    CTileScene *scene = new CTileScene(this,parent,QRectF(-475,-300,950,600));
+    QString settings;
+    QFile file;
+    file.setFileName(":/config/scenes/"+name+".json");
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    settings = file.readAll();
+    file.close();
+    QJsonDocument sd = QJsonDocument::fromJson(settings.toUtf8());
+    if(sd.isEmpty()) {
+        throw "Error with JSON Document: " + name + ".json";
+    }
+    QJsonObject sett2 = sd.object();
+    auto properties = sett2["properties"].toObject();
+    int x = properties["rect"].toObject()["x"].toInt();
+    int y = properties["rect"].toObject()["y"].toInt();
+    int width = properties["rect"].toObject()["width"].toInt();
+    int height = properties["rect"].toObject()["height"].toInt();
+    CTileScene *scene = new CTileScene(this,parent,QRectF(x,y,width,height));
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
     scene->gameengine()->mediaplayer()->setPlaylist(scene->gameengine()->mediaplaylist());
     scene->gameengine()->mediaplayer()->setVolume(5);
     scene->setName(name);
     if(name == "melba01") {
-        scene->setBackgroundBrush(Qt::black);
+        scene->setBackgroundBrush(Qt::gray);
         auto bkg = scene->setBackgroundImageByName("background01");
         bkg->setPos(-1*scene->sceneRect().height()/2-175, -1*scene->sceneRect().height()/2);
         bkg->setZValue(-1000);

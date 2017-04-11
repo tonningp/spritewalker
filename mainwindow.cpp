@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setupTimer();
     showMelba();
 
+    QObject::connect(timer(), SIGNAL(timeout()), this, SLOT(updateGameStatus()));
 }
 
 MainWindow::~MainWindow() {
@@ -33,7 +34,6 @@ MainWindow::~MainWindow() {
 
 void MainWindow::setupTimer() {
     timer(new QTimer);
-    QObject::connect(timer(), SIGNAL(timeout()), this, SLOT(updateGameStatus()));
     timer()->start(100);
 }
 
