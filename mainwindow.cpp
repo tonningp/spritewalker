@@ -51,11 +51,11 @@ void MainWindow::showScene(const QString &name) {
         ge->sceneManager()->createScene(name,this);
         scene(ge->sceneManager()->getScene(name));
     }
-    else if(scene()->gameengine()->sceneManager()->getScene(name) == NULL) {
-        scene()->gameengine()->sceneManager()->createScene(name,this);
+    else if(scene()->sceneManager()->getScene(name) == NULL) {
+        scene()->sceneManager()->createScene(name,this);
     }
-    scene(scene()->gameengine()->sceneManager()->getScene(name));
-    ui->graphicsView->setScene(scene()->gameengine()->sceneManager()->getScene(name));
+    scene(scene()->sceneManager()->getScene(name));
+    ui->graphicsView->setScene(scene()->sceneManager()->getScene(name));
 }
 
 void MainWindow::setupStatusLabel() {
@@ -160,15 +160,15 @@ void MainWindow::clearActors() {
 }
 
 void MainWindow::musicOn() {
-    scene()->gameengine()->mediaplayer()->play();
+    scene()->gameEngine()->mediaplayer()->play();
 }
 
 void MainWindow::musicOff() {
-    scene()->gameengine()->mediaplayer()->pause();
+    scene()->gameEngine()->mediaplayer()->pause();
 }
 
 void MainWindow::changeVolume(int v) {
-    scene()->gameengine()->mediaplayer()->setVolume(v);
+    scene()->gameEngine()->mediaplayer()->setVolume(v);
 }
 
 void MainWindow::drawScene() {

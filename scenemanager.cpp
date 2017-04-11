@@ -39,8 +39,8 @@ CTileScene *SceneManager::createScene(const QString &name,QObject* parent) {
     int height = properties["rect"].toObject()["height"].toInt();
     CTileScene *scene = new CTileScene(this,parent,QRectF(x,y,width,height));
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
-    scene->gameengine()->mediaplayer()->setPlaylist(scene->gameengine()->mediaplaylist());
-    scene->gameengine()->mediaplayer()->setVolume(5);
+    scene->gameEngine()->mediaplayer()->setPlaylist(scene->gameEngine()->mediaplaylist());
+    scene->gameEngine()->mediaplayer()->setVolume(5);
     scene->setName(name);
     if(name == "melba01") {
         scene->setBackgroundBrush(Qt::gray);

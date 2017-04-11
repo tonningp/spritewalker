@@ -52,11 +52,11 @@ public:
     void setDeadlist(const GraphicsItemList &deadlist);
     QTime current_time();
     QGraphicsItem* setBackgroundImageByName(const QString& name);
-    mfg::Engine *gameengine();
+    mfg::Engine *gameEngine();
     CConsoleWidget *console();
 
-    SceneManager *scene_manager() const;
-    void scene_manager(SceneManager *scene_manager);
+    SceneManager *sceneManager() const;
+    void sceneManager(SceneManager *sceneManager);
 
     QTimer *timer();
 

@@ -35,12 +35,12 @@ void CTileScene::setName(const QString &name)
     m_name = name;
 }
 
-SceneManager *CTileScene::scene_manager() const
+SceneManager *CTileScene::sceneManager() const
 {
     return m_scene_manager;
 }
 
-void CTileScene::scene_manager(SceneManager *scene_manager)
+void CTileScene::sceneManager(SceneManager *scene_manager)
 {
     m_scene_manager = scene_manager;
 }
@@ -49,9 +49,9 @@ QTimer *CTileScene::timer() {
     return m_timer;
 }
 
-mfg::Engine *CTileScene::gameengine()
+mfg::Engine *CTileScene::gameEngine()
 {
-    return scene_manager()->game_engine();
+    return sceneManager()->game_engine();
 }
 
 CConsoleWidget *CTileScene::console() {
@@ -73,7 +73,7 @@ void CTileScene::addItem(QGraphicsItem *item,const QString &name) {
 }
 
 SceneActor *CTileScene::addActor(const QString &name,const QString &start_action,bool moving) {
-    ActorPointer actor = new SceneActor(name,gameengine(),start_action,moving);
+    ActorPointer actor = new SceneActor(name,gameEngine(),start_action,moving);
     addItem(actor,"Actor");
     actor->setPos(QPointF(CUtilities::randInt(this->sceneRect().left(),this->sceneRect().right()),
                           CUtilities::randInt(this->sceneRect().top(),this->sceneRect().bottom())));
@@ -83,7 +83,7 @@ SceneActor *CTileScene::addActor(const QString &name,const QString &start_action
 }
 
 Sprite *CTileScene::addSprite(const QString &name,const QString &start_action,bool moving) {
-    SpritePointer sprite = new Sprite(name,gameengine(),moving);
+    SpritePointer sprite = new Sprite(name,gameEngine(),moving);
     addItem(sprite,"Sprite");
     sprite->setPos(QPointF(CUtilities::randInt(this->sceneRect().left(),this->sceneRect().right()),
                           CUtilities::randInt(this->sceneRect().top(),this->sceneRect().bottom())));
@@ -115,7 +115,7 @@ QTime CTileScene::current_time() {
 }
 
 QGraphicsItem *CTileScene::setBackgroundImageByName(const QString &name) {
-    return addPixmap(*(gameengine()->pixMap(name)));
+    return addPixmap(*(gameEngine()->pixMap(name)));
 }
 
 
