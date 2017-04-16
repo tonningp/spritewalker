@@ -17,6 +17,7 @@ Actor::Actor(const QString &name,mfg::Engine *ge,const QString& start_action,boo
     action(start_action);
     m_animation_cells = this->asset_manager()->spritePageColumns("walking_down");
     connect(this,&Actor::actionChanged,this,&Actor::changeAnimationFrames);
+    //startTimer(30);
 }
 
 
@@ -66,6 +67,11 @@ void Actor::buildActorPageCoordinates() {
             list.clear();
         }
     }
+}
+
+void Actor::timerEvent(QTimerEvent *event) {
+    animate();
+    updateSprite();
 }
 
 
@@ -122,6 +128,7 @@ QVector<RuleSet *> Actor::rules() {
 
 void Actor::advance(int step) {
     Sprite::advance(step);
+    if (!step) return;
     animate();
 }
 
@@ -206,7 +213,6 @@ void Actor::mousePressEvent(QGraphicsSceneMouseEvent *event) {
 void Actor::animate() {
     float distance=m_advance_distance;
     //if(!step) return;
-    Sprite::animate();
     advance_frame(1);
     int elapsed = ((GameScene*)scene())->current_time().elapsed();
     if(elapsed > 1) {
@@ -216,7 +222,9 @@ void Actor::animate() {
     if(m_current_frame > m_animation_cells -1)
         //then
         m_current_frame = 0;
-    checkIfOutOfBounds();
+//    if(name() != "hero") {
+       checkBoundary();
+//    }
     checkCollision();
     for(auto rule : rules()) {
        rule->apply(this);  // Apply the rules for the actor

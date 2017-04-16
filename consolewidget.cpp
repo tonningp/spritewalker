@@ -7,7 +7,7 @@
 #include <QPushButton>
 
 
-ConsoleWidget::ConsoleWidget(QWidget *parent) : QWidget(parent) {
+ConsoleWidget::ConsoleWidget(QWidget *parent) : QFrame(parent) {
     QPushButton *send = new QPushButton("Send to Actor",this);
     QPushButton *button = new QPushButton("Close",this);
     connect(button,&QPushButton::clicked,this,&ConsoleWidget::sendText);
@@ -15,7 +15,7 @@ ConsoleWidget::ConsoleWidget(QWidget *parent) : QWidget(parent) {
     QVBoxLayout *layout = new QVBoxLayout;
 
     m_textedit = new QTextEdit(this);
-    m_textedit->setPlainText(tr("Console text"));
+    //m_textedit->setPlainText(tr("Console text"));
     layout->addWidget(new QLabel("Enter some text"));
     layout->addWidget(m_textedit);
     layout->addWidget(send);

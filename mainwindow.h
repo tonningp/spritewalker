@@ -41,15 +41,14 @@ public:
     void scene(GameScene*);
     QTimer *timer();
     void timer(QTimer*);
-    QMediaPlayer *mediaplayer() const;
-    void mediaplayer(QMediaPlayer *mediaplayer);
+    QMediaPlayer *mediaPlayer() const;
+    void mediaPlayer(QMediaPlayer *mediaPlayer);
     QLabel *status_label() const;
     void status_label(QLabel *status_label);
     ConsoleWidget *console() const;
 
     void showScene(const QString &name);
 public slots:
-    void drawScene();
     void addMaleVillager();
     void addFemaleVillager();
     void addHero();
@@ -78,11 +77,12 @@ public slots:
     void actorClicked(QGraphicsSceneMouseEvent*,Sprite*);
     void keyPressEvent(QKeyEvent* e);
     void keyReleaseEvent(QKeyEvent* e);
+    void scaleScene(int s);
 
 protected:
     SceneActor* addActor(const QString &name);
-    Sprite *current_sprite() const;
-    void current_sprite(Sprite *current_sprite);
+    Sprite *currentSprite() const;
+    void currentSprite(Sprite *currentSprite);
 
 protected slots:
     void updateSpritePosition(Sprite *sprite);

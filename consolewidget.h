@@ -7,8 +7,7 @@
 /**
  * @brief The ConsoleWidget class - Provides a console for use in a GameScene
  */
-class ConsoleWidget : public QWidget
-{
+class ConsoleWidget : public QFrame {
     Q_OBJECT
     QTextEdit *m_textedit;
 public:

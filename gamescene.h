@@ -37,7 +37,7 @@ class GameScene : public QGraphicsScene
 public:
     explicit GameScene(SceneManager* sm,QObject *parent = 0,const QRectF &rect=QRectF(-300,-300,600,600));
     void connectTimer(QTimer*);
-    void drawGrid();
+
     void addItem(QGraphicsItem* item,const QString &name);
     SceneActor* addActor(const QString &name,const QString &start_action,bool moving);
     Sprite *addSprite(const QString &name, const QString &start_action, bool moving);

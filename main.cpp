@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     KeyPressConsumer *keyPressEater = new KeyPressConsumer(&w,&a);
     a.installEventFilter(keyPressEater);
-    w.setWindowTitle("Monsters vs. Heroes");
+    w.setWindowTitle("SpriteWalker");
     QTime thetime = QTime::currentTime();
     qsrand((uint)thetime.msec());
     w.show();

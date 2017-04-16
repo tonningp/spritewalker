@@ -77,23 +77,48 @@ scene the newly created scene
 37     \textcolor{keywordtype}{int} y = properties[\textcolor{stringliteral}{"rect"}].toObject()[\textcolor{stringliteral}{"y"}].toInt();
 38     \textcolor{keywordtype}{int} width = properties[\textcolor{stringliteral}{"rect"}].toObject()[\textcolor{stringliteral}{"width"}].toInt();
 39     \textcolor{keywordtype}{int} height = properties[\textcolor{stringliteral}{"rect"}].toObject()[\textcolor{stringliteral}{"height"}].toInt();
-40     \hyperlink{class_game_scene}{GameScene} *scene = \textcolor{keyword}{new} \hyperlink{class_game_scene}{GameScene}(\textcolor{keyword}{this},parent,QRectF(x,y,width,height));
-41     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
-42     scene->gameEngine()->mediaplayer()->setPlaylist(scene->gameEngine()->mediaplaylist());
-43     scene->gameEngine()->mediaplayer()->setVolume(5);
-44     scene->setName(name);
-45     \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"melba01"}) \{
-46         scene->setBackgroundBrush(Qt::gray);
-47         \textcolor{keyword}{auto} bkg = scene->setBackgroundImageByName(\textcolor{stringliteral}{"background01"});
-48         bkg->setPos(-1*scene->sceneRect().height()/2-175, -1*scene->sceneRect().height()/2);
-49         bkg->setZValue(-1000);
-50     \}
-51     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"space01"}) \{
-52         scene->setBackgroundBrush(Qt::black);
-53     \}
-54     m\_scene\_map.insert(name,scene);
-55     \textcolor{keywordflow}{return} scene;
-56 \}
+40     \textcolor{comment}{// "x" : -525,"y" : -300, "width" : 1000, "height" : 600}
+41     \textcolor{comment}{//QRectF rect = QRectF(QPointF(-1000,-2000), QSizeF(1000,200));}
+42     QRectF rect = QRectF(QPointF(x,y), QSizeF(width,height));
+43     \textcolor{comment}{//QRectF rect = QRectF(QPointF(0,0), QSizeF(0,0));}
+44     \hyperlink{class_game_scene}{GameScene} *scene = \textcolor{keyword}{new} \hyperlink{class_game_scene}{GameScene}(\textcolor{keyword}{this},parent,rect);
+45     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
+46     scene->gameEngine()->mediaplayer()->setPlaylist(scene->gameEngine()->mediaplaylist());
+47     scene->gameEngine()->mediaplayer()->setVolume(5);
+48     scene->setName(name);
+49     \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"melba01"}) \{
+50         QRectF sceneRect = scene->sceneRect();
+51         scene->setBackgroundBrush(Qt::gray);
+52         scene->addText(\textcolor{stringliteral}{"("}+QString::number(0)+\textcolor{stringliteral}{","}+QString::number(0)+\textcolor{stringliteral}{")"});
+53         scene->addText(\textcolor{stringliteral}{"("}+QString::number(sceneRect.x())+\textcolor{stringliteral}{","}+QString::number(sceneRect.y())+\textcolor{stringliteral}{")"})->setPos(
+      sceneRect.x(),sceneRect.y());
+54         scene->addText(\textcolor{stringliteral}{"("}+QString::number(sceneRect.x())+\textcolor{stringliteral}{","}+QString::number(sceneRect.y()+sceneRect.
+      height())+\textcolor{stringliteral}{")"})
+55                       ->setPos(sceneRect.x(),sceneRect.y()+sceneRect.height());
+56         scene->addText(\textcolor{stringliteral}{"("}+QString::number(sceneRect.x()+sceneRect.width())+\textcolor{stringliteral}{","}+QString::number(sceneRect.y
+      ())+\textcolor{stringliteral}{")"})
+57                       ->setPos(sceneRect.x()+sceneRect.width(),sceneRect.y());
+58         scene->addText(\textcolor{stringliteral}{"("}+QString::number(sceneRect.x()+sceneRect.width())+\textcolor{stringliteral}{","}+QString::number(sceneRect.y
+      ()+sceneRect.height())+\textcolor{stringliteral}{")"})
+59                       ->setPos(sceneRect.x()+sceneRect.width(),sceneRect.y()+sceneRect.height());
+60         \textcolor{keyword}{auto} bkg = scene->setBackgroundImageByName(\textcolor{stringliteral}{"background01"});
+61         bkg->setPos(-1*scene->sceneRect().height()/2-175, -1*scene->sceneRect().height()/2);
+62         bkg->setZValue(-1000);
+63         scene->addLine(scene->sceneRect().x(),scene->sceneRect().y(),scene->sceneRect().x()+scene->
+      sceneRect().width(),scene->sceneRect().y());
+64         \textcolor{keyword}{auto} o1 = scene->addLine(QLineF(QPointF(-25,0),QPointF(25,0)),QPen(Qt::blue));
+65         o1->setData(0,\textcolor{stringliteral}{"XAxis"});
+66         \textcolor{keyword}{auto} o2 = scene->addLine(QLineF(QPointF(0,-25),QPointF(0,25)),QPen(Qt::blue));
+67         o2->setData(0,\textcolor{stringliteral}{"YAxis"});
+68         \textcolor{keyword}{auto} r = scene->addRect(scene->sceneRect(),QPen(Qt::black));
+69         r->setData(0,\textcolor{stringliteral}{"Boundary"});
+70     \}
+71     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"space01"}) \{
+72         scene->setBackgroundBrush(Qt::black);
+73     \}
+74     m\_scene\_map.insert(name,scene);
+75     \textcolor{keywordflow}{return} scene;
+76 \}
 \end{DoxyCode}
 
 

@@ -5,6 +5,7 @@
 #include <QLineEdit>
 #include <QTextBlock>
 #include <QTime>
+#include <qmath.h>
 #include "mainwindow.h"
 #include "actordialog.h"
 #include "actor.h"
@@ -64,6 +65,9 @@ void MainWindow::setupStatusLabel() {
     ui->statusBar->addPermanentWidget(status_label());
 }
 
+/**
+ * @brief MainWindow::createMenus
+ */
 void MainWindow::createMenus()
 {
     QMenu* menu = menuBar()->addMenu(tr("&File"));
@@ -181,30 +185,24 @@ void MainWindow::changeVolume(int v) {
     scene()->gameEngine()->mediaplayer()->setVolume(v);
 }
 
-void MainWindow::drawScene() {
-    //auto bkg = scene()->setBackgroundImageByName("background01");
-    //bkg->setPos(-1*scene()->sceneRect().height()/2-175, -1*scene()->sceneRect().height()/2);
-    //bkg->setZValue(-1000);
-}
-
 void MainWindow::addHero() {
-    current_sprite(addActor("hero"));
+    currentSprite(addActor("hero"));
 }
 
 void MainWindow::addMonster() {
-    current_sprite(addActor("monster"));
+    currentSprite(addActor("monster"));
 }
 
 void MainWindow::addMaleVillager() {
-    current_sprite(addActor("male_villager"));
+    currentSprite(addActor("male_villager"));
 }
 
 void MainWindow::addFemaleVillager() {
-    current_sprite(addActor("female_villager"));
+    currentSprite(addActor("female_villager"));
 }
 
 void MainWindow::addScheusal() {
-    current_sprite(addActor("scheusal"));
+    currentSprite(addActor("scheusal"));
 }
 
 void MainWindow::addMountain() {
@@ -230,7 +228,7 @@ void MainWindow::addStream() {
 }
 
 void MainWindow::consoleText(const char *s) {
-   ActorPointer actor = ActorPointer((Actor*)current_sprite());
+   ActorPointer actor = ActorPointer((Actor*)currentSprite());
    actor << QString(s);
 }
 
@@ -249,15 +247,15 @@ void MainWindow::updateSpritePosition(Sprite* sprite) {
 }
 
 void MainWindow::actorClicked(QGraphicsSceneMouseEvent* event,Sprite* sprite) {
-    current_sprite(sprite);
+    currentSprite(sprite);
 
-    status_label()->setText(current_sprite()->name() +  " - "
-                            + QString::number(current_sprite()->pos().x())
+    status_label()->setText(currentSprite()->name() +  " - "
+                            + QString::number(currentSprite()->pos().x())
                             +","
-                            +QString::number(current_sprite()->pos().y()));
+                            +QString::number(currentSprite()->pos().y()));
 
-    if(event->button() == Qt::RightButton && scene()->isSceneActor(current_sprite())) {
-        ActorDialog *dlg = new ActorDialog(0,(SceneActor*)current_sprite());
+    if(event->button() == Qt::RightButton && scene()->isSceneActor(currentSprite())) {
+        ActorDialog *dlg = new ActorDialog(0,(SceneActor*)currentSprite());
         dlg->show();
     }
 }
@@ -290,11 +288,11 @@ void MainWindow::spriteSpeedSlow() {
 }
 
 void MainWindow::spriteStop() {
-   if(QPointer<Sprite>(current_sprite())) current_sprite()->animating(false);
+   if(QPointer<Sprite>(currentSprite())) currentSprite()->animating(false);
 }
 
 void MainWindow::spriteStart() {
-   if(QPointer<Sprite>(current_sprite())) current_sprite()->animating(true);
+   if(QPointer<Sprite>(currentSprite())) currentSprite()->animating(true);
 }
 
 void MainWindow::stopScene() {
@@ -336,16 +334,19 @@ void MainWindow::updateGameStatus() {
         ui->lbl_scheusal_count->setText(QString::number(actor_count_map["scheusal"]));
         ui->lbl_deadcount->setText(QString::number(scene()->deadCount()));
         ui->lbl_timer_interval->setText(QString::number(timer()->interval()));
+        if(m_current_sprite) {
+            updateSpritePosition(m_current_sprite);
+        }
         scene()->clearDead();
     }
 }
 
-Sprite *MainWindow::current_sprite() const
+Sprite *MainWindow::currentSprite() const
 {
     return m_current_sprite;
 }
 
-void MainWindow::current_sprite(Sprite *current_sprite)
+void MainWindow::currentSprite(Sprite *current_sprite)
 {
     m_current_sprite = current_sprite;
 }
@@ -361,7 +362,7 @@ void MainWindow::status_label(QLabel *status_label)
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *e) {
-    Actor* actor = QPointer<Actor>((Actor*)current_sprite());
+    Actor* actor = QPointer<Actor>((Actor*)currentSprite());
     if(m_key_state != KeyState::KEY_DOWN) {
             m_key_state = KeyState::KEY_DOWN;
                 switch(e->key()) {
@@ -432,10 +433,24 @@ void MainWindow::keyReleaseEvent(QKeyEvent *e)
 
 }
 
+void MainWindow::scaleScene(int s) {
+
+    qreal scale = qPow(qreal(2), (s - 250) / qreal(50));
+    QMatrix matrix;
+    matrix.scale(scale, scale);
+    ui->graphicsView->setMatrix(matrix);
+    qDebug() << ui->graphicsView->transform();
+}
+
 void MainWindow::moveSprite(Sprite_Direction direction) {
     if(QPointer<Sprite>(scene()->current_sprite(m_current_sprite))) {
             scene()->current_sprite(m_current_sprite)->direction(direction);
-            scene()->current_sprite(m_current_sprite)->update_sprite();
+            scene()->current_sprite(m_current_sprite)->updateSprite();
+            //ui->graphicsView->centerOn(m_current_sprite);
+            QRect rcontent = ui->graphicsView->contentsRect();
+            //ui->graphicsView->setSceneRect(0, 0, rcontent.width(), rcontent.height());
+            ui->graphicsView->ensureVisible(m_current_sprite);
+            ui->graphicsView->update();
     }
 }
 
@@ -444,12 +459,12 @@ ConsoleWidget *MainWindow::console() const
     return m_console;
 }
 
-QMediaPlayer *MainWindow::mediaplayer() const
+QMediaPlayer *MainWindow::mediaPlayer() const
 {
     return m_player;
 }
 
-void MainWindow::mediaplayer(QMediaPlayer *player)
+void MainWindow::mediaPlayer(QMediaPlayer *player)
 {
     m_player = player;
 }

@@ -18,7 +18,7 @@ Sprite::Sprite(const QString &name,mfg::Engine* game_engine,bool moving,QObject 
     m_sprite_cols(game_engine->assetManager(name)->spriteSheetColumns()),
     m_animated(moving),
     m_start_row(0),m_sprite_speed(300),
-    m_advance_distance(1.5) {
+    m_advance_distance(3.5) {
 
     if(this->assetmanager()->hasAction("stationary")) {
         m_stationary = true;
@@ -116,7 +116,7 @@ void Sprite::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     emit spritePainting(this,painter,option,widget);
 }
 
-void Sprite::checkIfOutOfBounds() {
+void Sprite::checkBoundary() {
     QRectF sceneRect = scene()->sceneRect();
     if (x() < sceneRect.left()+m_left_adjust) { // left
             //setPos(sceneRect.left()+left_adjust, y());
@@ -187,9 +187,9 @@ void Sprite::checkCollision() {
  * Will set the frame as well as the position of the sprite in the scene
  */
 void Sprite::advance(int step) {
-    //QGraphicsItem::advance(step);
+    QGraphicsItem::advance(step);
     if (!step) return;
-    this->update_sprite();
+    this->updateSprite();
 }
 
 int Sprite::animation_cells() const
@@ -217,7 +217,7 @@ int Sprite::sprite_width() const
     return m_sprite_width;
 }
 
-void Sprite::update_sprite() {
+void Sprite::updateSprite() {
     if(m_animated)
        this->update(m_sprite_image_top,m_sprite_image_left,m_sprite_width,m_sprite_height);
 }
@@ -280,6 +280,3 @@ void Sprite::mousePressEvent(QGraphicsSceneMouseEvent *event) {
     emit spriteClick(event,this);
 }
 
-void Sprite::animate() {
-
-}

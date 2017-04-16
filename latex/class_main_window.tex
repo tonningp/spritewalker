@@ -18,9 +18,6 @@ Inheritance diagram for Main\+Window\+:\begin{figure}[H]
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_main_window_a82f817734838a4a86b34e2f0968a8ae2}\label{class_main_window_a82f817734838a4a86b34e2f0968a8ae2}} 
-void {\bfseries draw\+Scene} ()
-\item 
 \mbox{\Hypertarget{class_main_window_ae2183a75f745a295c966f07aba433a3d}\label{class_main_window_ae2183a75f745a295c966f07aba433a3d}} 
 void {\bfseries add\+Male\+Villager} ()
 \item 
@@ -104,6 +101,9 @@ void {\bfseries key\+Press\+Event} (Q\+Key\+Event $\ast$e)
 \item 
 \mbox{\Hypertarget{class_main_window_a04b0c8ff3be04d1b1bf54e78c5ee7039}\label{class_main_window_a04b0c8ff3be04d1b1bf54e78c5ee7039}} 
 void {\bfseries key\+Release\+Event} (Q\+Key\+Event $\ast$e)
+\item 
+\mbox{\Hypertarget{class_main_window_afded6dc0db0f820485fda0ea61675e7c}\label{class_main_window_afded6dc0db0f820485fda0ea61675e7c}} 
+void {\bfseries scale\+Scene} (int s)
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -123,11 +123,11 @@ Q\+Timer $\ast$ {\bfseries timer} ()
 \mbox{\Hypertarget{class_main_window_a5ac9feeab611a5aafaa0191df82b4bf1}\label{class_main_window_a5ac9feeab611a5aafaa0191df82b4bf1}} 
 void {\bfseries timer} (Q\+Timer $\ast$)
 \item 
-\mbox{\Hypertarget{class_main_window_a6a897bf339db50a6209d6935b039f1a7}\label{class_main_window_a6a897bf339db50a6209d6935b039f1a7}} 
-Q\+Media\+Player $\ast$ {\bfseries mediaplayer} () const
+\mbox{\Hypertarget{class_main_window_a1ee03f14689d63b79b48dd31c7f2c572}\label{class_main_window_a1ee03f14689d63b79b48dd31c7f2c572}} 
+Q\+Media\+Player $\ast$ {\bfseries media\+Player} () const
 \item 
-\mbox{\Hypertarget{class_main_window_aec13aad03609daadb5e54e2de86f1e08}\label{class_main_window_aec13aad03609daadb5e54e2de86f1e08}} 
-void {\bfseries mediaplayer} (Q\+Media\+Player $\ast$mediaplayer)
+\mbox{\Hypertarget{class_main_window_a04a7066651d54008b870b722b310da41}\label{class_main_window_a04a7066651d54008b870b722b310da41}} 
+void {\bfseries media\+Player} (Q\+Media\+Player $\ast$media\+Player)
 \item 
 \mbox{\Hypertarget{class_main_window_adb747cc217a5a2a077af79fe72c278cf}\label{class_main_window_adb747cc217a5a2a077af79fe72c278cf}} 
 Q\+Label $\ast$ {\bfseries status\+\_\+label} () const
@@ -153,11 +153,11 @@ void {\bfseries update\+Sprite\+Position} (\hyperlink{class_sprite}{Sprite} $\as
 \mbox{\Hypertarget{class_main_window_abad7b29bc1e42b37a722bf063aab3512}\label{class_main_window_abad7b29bc1e42b37a722bf063aab3512}} 
 \hyperlink{class_actor}{Scene\+Actor} $\ast$ {\bfseries add\+Actor} (const Q\+String \&name)
 \item 
-\mbox{\Hypertarget{class_main_window_a56886615b350cd30a42d70c4d35a29b0}\label{class_main_window_a56886615b350cd30a42d70c4d35a29b0}} 
-\hyperlink{class_sprite}{Sprite} $\ast$ {\bfseries current\+\_\+sprite} () const
+\mbox{\Hypertarget{class_main_window_a15a2912e758dcab1067e058c05f0985c}\label{class_main_window_a15a2912e758dcab1067e058c05f0985c}} 
+\hyperlink{class_sprite}{Sprite} $\ast$ {\bfseries current\+Sprite} () const
 \item 
-\mbox{\Hypertarget{class_main_window_ada53519efb7700c4bf59aee90334f95e}\label{class_main_window_ada53519efb7700c4bf59aee90334f95e}} 
-void {\bfseries current\+\_\+sprite} (\hyperlink{class_sprite}{Sprite} $\ast$current\+\_\+sprite)
+\mbox{\Hypertarget{class_main_window_aa8933698bfe5ca463cb69879663b573a}\label{class_main_window_aa8933698bfe5ca463cb69879663b573a}} 
+void {\bfseries current\+Sprite} (\hyperlink{class_sprite}{Sprite} $\ast$current\+Sprite)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -178,8 +178,8 @@ void {\bfseries show\+Space} ()
 void {\bfseries setup\+Status\+Label} ()
 \item 
 \mbox{\Hypertarget{class_main_window_aa4907b0251d305659e403c62921ef331}\label{class_main_window_aa4907b0251d305659e403c62921ef331}} 
-void {\bfseries create\+Menus} ()
-\item 
+void \hyperlink{class_main_window_aa4907b0251d305659e403c62921ef331}{create\+Menus} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_main_window_aa4907b0251d305659e403c62921ef331}{Main\+Window\+::create\+Menus}. \end{DoxyCompactList}\item 
 Q\+Action $\ast$ \hyperlink{class_main_window_a5916e4c4ce07f6de5e084d0cd27d81c2}{create\+Action} (const Q\+String \&menu, const Q\+Key\+Sequence \&, const Q\+String \&tip)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_main_window_a5916e4c4ce07f6de5e084d0cd27d81c2}{Main\+Window\+::create\+Action} create a menu action. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_main_window_a69f73b93cc05c89a9ae1be0161105982}\label{class_main_window_a69f73b93cc05c89a9ae1be0161105982}} 
@@ -257,12 +257,12 @@ $\ast$\+Q\+Action
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-134                                                                                                       \{
-135     QAction *newAct = \textcolor{keyword}{new} QAction(tr(menu.toLatin1().data()), \textcolor{keyword}{this});
-136     newAct->setShortcut(shortcut);
-137     newAct->setStatusTip(tr(tip.toLatin1().data()));
-138     \textcolor{keywordflow}{return} newAct;
-139 \}
+137                                                                                                       \{
+138     QAction *newAct = \textcolor{keyword}{new} QAction(tr(menu.toLatin1().data()), \textcolor{keyword}{this});
+139     newAct->setShortcut(shortcut);
+140     newAct->setStatusTip(tr(tip.toLatin1().data()));
+141     \textcolor{keywordflow}{return} newAct;
+142 \}
 \end{DoxyCode}
 
 

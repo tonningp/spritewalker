@@ -91,16 +91,13 @@ Public Slots</h2></td></tr>
 <tr class="memitem:abfb178899dad2f9e42f16280c7fe31e6"><td class="memItemLeft" align="right" valign="top"><a id="abfb178899dad2f9e42f16280c7fe31e6"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>mousePressEvent</b> (QGraphicsSceneMouseEvent *event) override</td></tr>
 <tr class="separator:abfb178899dad2f9e42f16280c7fe31e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1534650c6dbffefd97662ce24f1f82c"><td class="memItemLeft" align="right" valign="top"><a id="ad1534650c6dbffefd97662ce24f1f82c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>animate</b> () override</td></tr>
-<tr class="separator:ad1534650c6dbffefd97662ce24f1f82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94254c47676f41349dbbdd8d77f8e9a8"><td class="memItemLeft" align="right" valign="top"><a id="a94254c47676f41349dbbdd8d77f8e9a8"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>animate</b> ()</td></tr>
+<tr class="separator:a94254c47676f41349dbbdd8d77f8e9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_slots_class_sprite"><td colspan="2" onclick="javascript:toggleInherit('pub_slots_class_sprite')"><img src="closed.png" alt="-"/>&#160;Public Slots inherited from <a class="el" href="class_sprite.html">Sprite</a></td></tr>
 <tr class="memitem:ab76c12803dcd1f7a44c4acbbec91380d inherit pub_slots_class_sprite"><td class="memItemLeft" align="right" valign="top"><a id="ab76c12803dcd1f7a44c4acbbec91380d"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>mousePressEvent</b> (QGraphicsSceneMouseEvent *event) override</td></tr>
 <tr class="separator:ab76c12803dcd1f7a44c4acbbec91380d inherit pub_slots_class_sprite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8935559355be47d8ba7e7eb175aecdb5 inherit pub_slots_class_sprite"><td class="memItemLeft" align="right" valign="top"><a id="a8935559355be47d8ba7e7eb175aecdb5"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>animate</b> ()</td></tr>
-<tr class="separator:a8935559355be47d8ba7e7eb175aecdb5 inherit pub_slots_class_sprite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -261,9 +258,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>animating</b> () cons
 <tr class="memitem:a1a3df748d6a3469d1b79cde39adb8ebc inherit pub_methods_class_sprite"><td class="memItemLeft" align="right" valign="top"><a id="a1a3df748d6a3469d1b79cde39adb8ebc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>animating</b> (bool animating)</td></tr>
 <tr class="separator:a1a3df748d6a3469d1b79cde39adb8ebc inherit pub_methods_class_sprite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f3a0b845fc21ff9f0774613124b1e6 inherit pub_methods_class_sprite"><td class="memItemLeft" align="right" valign="top"><a id="a55f3a0b845fc21ff9f0774613124b1e6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update_sprite</b> ()</td></tr>
-<tr class="separator:a55f3a0b845fc21ff9f0774613124b1e6 inherit pub_methods_class_sprite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a511c565998b09ebebc83c0205bd54f77 inherit pub_methods_class_sprite"><td class="memItemLeft" align="right" valign="top"><a id="a511c565998b09ebebc83c0205bd54f77"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateSprite</b> ()</td></tr>
+<tr class="separator:a511c565998b09ebebc83c0205bd54f77 inherit pub_methods_class_sprite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdba2a71fac359258d583bcdc2648cdd inherit pub_methods_class_sprite"><td class="memItemLeft" align="right" valign="top"><a id="acdba2a71fac359258d583bcdc2648cdd"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>sprite_width</b> () const</td></tr>
 <tr class="separator:acdba2a71fac359258d583bcdc2648cdd inherit pub_methods_class_sprite"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,13 +282,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8b92acf4b839678301491ca5ecd7580d"><td class="memItemLeft" align="right" valign="top"><a id="a8b92acf4b839678301491ca5ecd7580d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>buildActorPageCoordinates</b> ()</td></tr>
 <tr class="separator:a8b92acf4b839678301491ca5ecd7580d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aa4b3f2a1db3a5fb65f5a233f00dc52"><td class="memItemLeft" align="right" valign="top"><a id="a1aa4b3f2a1db3a5fb65f5a233f00dc52"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>timerEvent</b> (QTimerEvent *event) override</td></tr>
+<tr class="separator:a1aa4b3f2a1db3a5fb65f5a233f00dc52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_sprite"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_sprite')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_sprite.html">Sprite</a></td></tr>
 <tr class="memitem:a0af8ed7bce1d1dde0a2c01f9461d4b4f inherit pro_methods_class_sprite"><td class="memItemLeft" align="right" valign="top"><a id="a0af8ed7bce1d1dde0a2c01f9461d4b4f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>buildCoordinates</b> ()</td></tr>
 <tr class="separator:a0af8ed7bce1d1dde0a2c01f9461d4b4f inherit pro_methods_class_sprite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefcdf13598b88f1ad0a4bfd797815b3b inherit pro_methods_class_sprite"><td class="memItemLeft" align="right" valign="top"><a id="aefcdf13598b88f1ad0a4bfd797815b3b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>checkIfOutOfBounds</b> ()</td></tr>
-<tr class="separator:aefcdf13598b88f1ad0a4bfd797815b3b inherit pro_methods_class_sprite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4af173bffcc73a079c311118b9833780 inherit pro_methods_class_sprite"><td class="memItemLeft" align="right" valign="top"><a id="a4af173bffcc73a079c311118b9833780"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>checkBoundary</b> ()</td></tr>
+<tr class="separator:a4af173bffcc73a079c311118b9833780 inherit pro_methods_class_sprite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa1b06057132ee51960b783635cfec44 inherit pro_methods_class_sprite"><td class="memItemLeft" align="right" valign="top"><a id="aaa1b06057132ee51960b783635cfec44"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>checkCollision</b> ()</td></tr>
 <tr class="separator:aaa1b06057132ee51960b783635cfec44 inherit pro_methods_class_sprite"><td class="memSeparator" colspan="2">&#160;</td></tr>

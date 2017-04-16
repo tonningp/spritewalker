@@ -86,9 +86,6 @@ Inheritance diagram for MainWindow:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a82f817734838a4a86b34e2f0968a8ae2"><td class="memItemLeft" align="right" valign="top"><a id="a82f817734838a4a86b34e2f0968a8ae2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>drawScene</b> ()</td></tr>
-<tr class="separator:a82f817734838a4a86b34e2f0968a8ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2183a75f745a295c966f07aba433a3d"><td class="memItemLeft" align="right" valign="top"><a id="ae2183a75f745a295c966f07aba433a3d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>addMaleVillager</b> ()</td></tr>
 <tr class="separator:ae2183a75f745a295c966f07aba433a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,6 +170,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>keyPressEvent</b> (QK
 <tr class="memitem:a04b0c8ff3be04d1b1bf54e78c5ee7039"><td class="memItemLeft" align="right" valign="top"><a id="a04b0c8ff3be04d1b1bf54e78c5ee7039"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>keyReleaseEvent</b> (QKeyEvent *e)</td></tr>
 <tr class="separator:a04b0c8ff3be04d1b1bf54e78c5ee7039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afded6dc0db0f820485fda0ea61675e7c"><td class="memItemLeft" align="right" valign="top"><a id="afded6dc0db0f820485fda0ea61675e7c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>scaleScene</b> (int s)</td></tr>
+<tr class="separator:afded6dc0db0f820485fda0ea61675e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -191,12 +191,12 @@ QTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>timer</b> ()</td>
 <tr class="memitem:a5ac9feeab611a5aafaa0191df82b4bf1"><td class="memItemLeft" align="right" valign="top"><a id="a5ac9feeab611a5aafaa0191df82b4bf1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>timer</b> (QTimer *)</td></tr>
 <tr class="separator:a5ac9feeab611a5aafaa0191df82b4bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a897bf339db50a6209d6935b039f1a7"><td class="memItemLeft" align="right" valign="top"><a id="a6a897bf339db50a6209d6935b039f1a7"></a>
-QMediaPlayer *&#160;</td><td class="memItemRight" valign="bottom"><b>mediaplayer</b> () const</td></tr>
-<tr class="separator:a6a897bf339db50a6209d6935b039f1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec13aad03609daadb5e54e2de86f1e08"><td class="memItemLeft" align="right" valign="top"><a id="aec13aad03609daadb5e54e2de86f1e08"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>mediaplayer</b> (QMediaPlayer *mediaplayer)</td></tr>
-<tr class="separator:aec13aad03609daadb5e54e2de86f1e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ee03f14689d63b79b48dd31c7f2c572"><td class="memItemLeft" align="right" valign="top"><a id="a1ee03f14689d63b79b48dd31c7f2c572"></a>
+QMediaPlayer *&#160;</td><td class="memItemRight" valign="bottom"><b>mediaPlayer</b> () const</td></tr>
+<tr class="separator:a1ee03f14689d63b79b48dd31c7f2c572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a7066651d54008b870b722b310da41"><td class="memItemLeft" align="right" valign="top"><a id="a04a7066651d54008b870b722b310da41"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>mediaPlayer</b> (QMediaPlayer *mediaPlayer)</td></tr>
+<tr class="separator:a04a7066651d54008b870b722b310da41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb747cc217a5a2a077af79fe72c278cf"><td class="memItemLeft" align="right" valign="top"><a id="adb747cc217a5a2a077af79fe72c278cf"></a>
 QLabel *&#160;</td><td class="memItemRight" valign="bottom"><b>status_label</b> () const</td></tr>
 <tr class="separator:adb747cc217a5a2a077af79fe72c278cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,12 +221,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:abad7b29bc1e42b37a722bf063aab3512"><td class="memItemLeft" align="right" valign="top"><a id="abad7b29bc1e42b37a722bf063aab3512"></a>
 <a class="el" href="class_actor.html">SceneActor</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>addActor</b> (const QString &amp;name)</td></tr>
 <tr class="separator:abad7b29bc1e42b37a722bf063aab3512"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56886615b350cd30a42d70c4d35a29b0"><td class="memItemLeft" align="right" valign="top"><a id="a56886615b350cd30a42d70c4d35a29b0"></a>
-<a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>current_sprite</b> () const</td></tr>
-<tr class="separator:a56886615b350cd30a42d70c4d35a29b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada53519efb7700c4bf59aee90334f95e"><td class="memItemLeft" align="right" valign="top"><a id="ada53519efb7700c4bf59aee90334f95e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>current_sprite</b> (<a class="el" href="class_sprite.html">Sprite</a> *current_sprite)</td></tr>
-<tr class="separator:ada53519efb7700c4bf59aee90334f95e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a2912e758dcab1067e058c05f0985c"><td class="memItemLeft" align="right" valign="top"><a id="a15a2912e758dcab1067e058c05f0985c"></a>
+<a class="el" href="class_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>currentSprite</b> () const</td></tr>
+<tr class="separator:a15a2912e758dcab1067e058c05f0985c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8933698bfe5ca463cb69879663b573a"><td class="memItemLeft" align="right" valign="top"><a id="aa8933698bfe5ca463cb69879663b573a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>currentSprite</b> (<a class="el" href="class_sprite.html">Sprite</a> *currentSprite)</td></tr>
+<tr class="separator:aa8933698bfe5ca463cb69879663b573a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -246,7 +246,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>showSpace</b> ()</td>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setupStatusLabel</b> ()</td></tr>
 <tr class="separator:a354de8b79b7996530d6689c1a68cf858"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4907b0251d305659e403c62921ef331"><td class="memItemLeft" align="right" valign="top"><a id="aa4907b0251d305659e403c62921ef331"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>createMenus</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa4907b0251d305659e403c62921ef331">createMenus</a> ()</td></tr>
+<tr class="memdesc:aa4907b0251d305659e403c62921ef331"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_main_window.html#aa4907b0251d305659e403c62921ef331" title="MainWindow::createMenus. ">MainWindow::createMenus</a>. <br /></td></tr>
 <tr class="separator:aa4907b0251d305659e403c62921ef331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5916e4c4ce07f6de5e084d0cd27d81c2"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a5916e4c4ce07f6de5e084d0cd27d81c2">createAction</a> (const QString &amp;menu, const QKeySequence &amp;, const QString &amp;tip)</td></tr>
 <tr class="memdesc:a5916e4c4ce07f6de5e084d0cd27d81c2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_main_window.html#a5916e4c4ce07f6de5e084d0cd27d81c2" title="MainWindow::createAction create a menu action. ">MainWindow::createAction</a> create a menu action.  <a href="#a5916e4c4ce07f6de5e084d0cd27d81c2">More...</a><br /></td></tr>
@@ -351,7 +352,7 @@ Ui::MainWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>*QAction </dd></dl>
-<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                                                                                      {</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    QAction *newAct = <span class="keyword">new</span> QAction(tr(menu.toLatin1().data()), <span class="keyword">this</span>);</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    newAct-&gt;setShortcut(shortcut);</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    newAct-&gt;setStatusTip(tr(tip.toLatin1().data()));</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> newAct;</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                                                                                      {</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    QAction *newAct = <span class="keyword">new</span> QAction(tr(menu.toLatin1().data()), <span class="keyword">this</span>);</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    newAct-&gt;setShortcut(shortcut);</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    newAct-&gt;setStatusTip(tr(tip.toLatin1().data()));</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">return</span> newAct;</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>

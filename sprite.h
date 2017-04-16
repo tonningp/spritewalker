@@ -9,7 +9,6 @@
 #include <QPair>
 #include <QPointer>
 #include "sequentialguid.h"
-//#include "gameengine.h"
 
 class Sprite;
 class AssetManager;
@@ -81,7 +80,7 @@ public:
 
     bool animating() const;
     void animating(bool animating);
-    void update_sprite();
+    void updateSprite();
     int sprite_width() const;
     int sprite_height() const;
     bool stationary() const;
@@ -97,7 +96,6 @@ signals:
 
 public slots:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
-    virtual void animate();
 
 protected:
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
@@ -124,7 +122,7 @@ protected:
     SpriteList m_colliding_list;
     AssetManager* m_asset_manager;
     mfg::Engine* m_game_engine;
-    void checkIfOutOfBounds();
+    void checkBoundary();
     void checkCollision();
     QRectF boundingRect() const override;
     QUuid m_guid;

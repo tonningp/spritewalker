@@ -8,6 +8,8 @@ QT       += core gui \
             multimedia \
             multimediawidgets \
             script
+qtHaveModule(printsupport): QT += printsupport
+qtHaveModule(opengl): QT += opengl
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -33,7 +35,8 @@ SOURCES += main.cpp\
     actordialog.cpp \
     keypressconsumer.cpp \
     ruleset.cpp \
-    utilities.cpp
+    utilities.cpp \
+    view.cpp
 
 HEADERS  += mainwindow.h \
     sprite.h \
@@ -52,7 +55,8 @@ HEADERS  += mainwindow.h \
     actordialog.h \
     keypressconsumer.h \
     ruleset.h \
-    utilities.h
+    utilities.h \
+    view.h
 
 FORMS    += mainwindow.ui \
     actordialog.ui

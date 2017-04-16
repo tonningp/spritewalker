@@ -47,13 +47,14 @@ friend Actor *operator<<(Actor* actor,const QString &message);
 
 public slots:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
-    virtual void animate() override;
+    virtual void animate();
 
 private slots:
     virtual void changeAnimationFrames(Sprite* sprite);
 
 protected:
     void buildActorPageCoordinates();
+    void timerEvent(QTimerEvent *event) override;
 private:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
     void advance(int step) Q_DECL_OVERRIDE;

@@ -1,0 +1,98 @@
+\hypertarget{class_view}{}\section{View Class Reference}
+\label{class_view}\index{View@{View}}
+Inheritance diagram for View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_view}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_view_a717d325ccb0b67da221ba69f8fac4eb0}\label{class_view_a717d325ccb0b67da221ba69f8fac4eb0}} 
+void {\bfseries zoom\+In} (int level=1)
+\item 
+\mbox{\Hypertarget{class_view_adf6fef596278977c317260970a694ac2}\label{class_view_adf6fef596278977c317260970a694ac2}} 
+void {\bfseries zoom\+Out} (int level=1)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_view_a4096da0b5a8ef74aaa5d01b9e856c846}\label{class_view_a4096da0b5a8ef74aaa5d01b9e856c846}} 
+{\bfseries View} (const Q\+String \&name, Q\+Widget $\ast$parent=0)
+\item 
+\mbox{\Hypertarget{class_view_a0b2f73ccc43e38018031579347c2eddb}\label{class_view_a0b2f73ccc43e38018031579347c2eddb}} 
+Q\+Graphics\+View $\ast$ {\bfseries view} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_view_ad401cfb19dd4800f421462f9ac06dcb1}\label{class_view_ad401cfb19dd4800f421462f9ac06dcb1}} 
+void {\bfseries reset\+View} ()
+\item 
+\mbox{\Hypertarget{class_view_a8f5452cd1fadff1f76451043805ab0c8}\label{class_view_a8f5452cd1fadff1f76451043805ab0c8}} 
+void {\bfseries set\+Reset\+Button\+Enabled} ()
+\item 
+\mbox{\Hypertarget{class_view_a50cdd507f48026272dbb2293c5f8d668}\label{class_view_a50cdd507f48026272dbb2293c5f8d668}} 
+void {\bfseries setup\+Matrix} ()
+\item 
+\mbox{\Hypertarget{class_view_ab3077023f0e3869424f2b18e2ad59a2e}\label{class_view_ab3077023f0e3869424f2b18e2ad59a2e}} 
+void {\bfseries toggle\+Pointer\+Mode} ()
+\item 
+\mbox{\Hypertarget{class_view_a5d0cdedad1872f6fbc1301bc199d9542}\label{class_view_a5d0cdedad1872f6fbc1301bc199d9542}} 
+void {\bfseries toggle\+Open\+GL} ()
+\item 
+\mbox{\Hypertarget{class_view_a3abbaa118728a17554556b248e99ac08}\label{class_view_a3abbaa118728a17554556b248e99ac08}} 
+void {\bfseries toggle\+Antialiasing} ()
+\item 
+\mbox{\Hypertarget{class_view_a699105aa4ef8bd0709654056de54f074}\label{class_view_a699105aa4ef8bd0709654056de54f074}} 
+void {\bfseries print} ()
+\item 
+\mbox{\Hypertarget{class_view_a978048b2af8e37726bec40c04bd0eac9}\label{class_view_a978048b2af8e37726bec40c04bd0eac9}} 
+void {\bfseries rotate\+Left} ()
+\item 
+\mbox{\Hypertarget{class_view_ae5d1a85e57efa86cf6017c3da3e27db5}\label{class_view_ae5d1a85e57efa86cf6017c3da3e27db5}} 
+void {\bfseries rotate\+Right} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_view_abeaa234f089dcfe153fa8775879742b4}\label{class_view_abeaa234f089dcfe153fa8775879742b4}} 
+\hyperlink{class_graphics_view}{Graphics\+View} $\ast$ {\bfseries graphics\+View}
+\item 
+\mbox{\Hypertarget{class_view_a4828cf62e9dae5f323a07415e2085e93}\label{class_view_a4828cf62e9dae5f323a07415e2085e93}} 
+Q\+Label $\ast$ {\bfseries label}
+\item 
+\mbox{\Hypertarget{class_view_a5d8e062d1c3d9976c5f2d3bfd7e14fc4}\label{class_view_a5d8e062d1c3d9976c5f2d3bfd7e14fc4}} 
+Q\+Label $\ast$ {\bfseries label2}
+\item 
+\mbox{\Hypertarget{class_view_a37dcb090da3612968a463fc1acdfdfd8}\label{class_view_a37dcb090da3612968a463fc1acdfdfd8}} 
+Q\+Tool\+Button $\ast$ {\bfseries select\+Mode\+Button}
+\item 
+\mbox{\Hypertarget{class_view_ab3e0064b1ee94740d1d842dbc7bd5b08}\label{class_view_ab3e0064b1ee94740d1d842dbc7bd5b08}} 
+Q\+Tool\+Button $\ast$ {\bfseries drag\+Mode\+Button}
+\item 
+\mbox{\Hypertarget{class_view_a4c8297a419c25bb2e569fb2e8aea2e83}\label{class_view_a4c8297a419c25bb2e569fb2e8aea2e83}} 
+Q\+Tool\+Button $\ast$ {\bfseries open\+Gl\+Button}
+\item 
+\mbox{\Hypertarget{class_view_ad84d40cb5285bdaa915f54a019f989f8}\label{class_view_ad84d40cb5285bdaa915f54a019f989f8}} 
+Q\+Tool\+Button $\ast$ {\bfseries antialias\+Button}
+\item 
+\mbox{\Hypertarget{class_view_a661be086222b35b626c886d0daef0042}\label{class_view_a661be086222b35b626c886d0daef0042}} 
+Q\+Tool\+Button $\ast$ {\bfseries print\+Button}
+\item 
+\mbox{\Hypertarget{class_view_ae69df47f5a15a623360aceab8ae532e9}\label{class_view_ae69df47f5a15a623360aceab8ae532e9}} 
+Q\+Tool\+Button $\ast$ {\bfseries reset\+Button}
+\item 
+\mbox{\Hypertarget{class_view_a04e43e70df28e61b250272c08565622f}\label{class_view_a04e43e70df28e61b250272c08565622f}} 
+Q\+Slider $\ast$ {\bfseries zoom\+Slider}
+\item 
+\mbox{\Hypertarget{class_view_a15e93063689067dcf11aaa1813d020d6}\label{class_view_a15e93063689067dcf11aaa1813d020d6}} 
+Q\+Slider $\ast$ {\bfseries rotate\+Slider}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+view.\+h\item 
+view.\+cpp\end{DoxyCompactItemize}

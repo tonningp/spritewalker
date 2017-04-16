@@ -9,7 +9,8 @@
 
 
 GameScene::GameScene(SceneManager* sm,QObject *parent,const QRectF &rect) :
-    QGraphicsScene(parent),
+    QGraphicsScene(rect,parent),
+    //QGraphicsScene(parent),
     m_scene_manager(sm),
     m_current_sprite(NULL),
     m_timer(new QTimer),
@@ -17,8 +18,7 @@ GameScene::GameScene(SceneManager* sm,QObject *parent,const QRectF &rect) :
 {
     this->addWidget(m_console);
     m_console->hide();
-    this->setSceneRect(rect);
-    drawGrid();
+
     connect(m_timer, &QTimer::timeout, this, &GameScene::advance);
     connect(m_timer, &QTimer::timeout, this, &GameScene::actorCollision);
     QObject::connect(m_console, SIGNAL(signalText(const char*)), parent, SLOT(consoleText(const char*)));
@@ -58,14 +58,7 @@ ConsoleWidget *GameScene::console() {
     return m_console;
 }
 
-void GameScene::drawGrid() {
-    auto o1 = this->addLine(QLineF(QPointF(-25,0),QPointF(25,0)),QPen(Qt::blue));
-    o1->setData(0,"XAxis");
-    auto o2 = this->addLine(QLineF(QPointF(0,-25),QPointF(0,25)),QPen(Qt::blue));
-    o2->setData(0,"YAxis");
-    auto r = this->addRect(this->sceneRect(),QPen(Qt::black));
-    r->setData(0,"Boundary");
-}
+
 
 void GameScene::addItem(QGraphicsItem *item,const QString &name) {
     item->setData(0,name);  // key 0 is the type
@@ -195,30 +188,6 @@ void GameScene::advance() {
     m_current_time = QTime();
     m_current_time.start();
     QGraphicsScene::advance();
-/*
-    for(auto item : items()) {
-            if(item->data(0) == "Actor") {
-                ActorPointer actor = ActorPointer((Actor*)item);
-                if(actor && actor->animating() && actor->is_moving()) {
-                    switch(actor->direction()) {
-                    case SPRITE_DOWN:
-                        actor->setPos(actor->pos()+QPointF(0,actor->advance_distance()));
-                        break;
-                    case SPRITE_UP:
-                        actor->setPos(actor->pos()+QPointF(0,-1*actor->advance_distance()));
-                        break;
-                    case SPRITE_LEFT:
-                        actor->setPos(actor->pos()+QPointF(-1 * actor->advance_distance(),0));
-                        break;
-                    case SPRITE_RIGHT:
-                        actor->setPos(actor->pos()+QPointF(actor->advance_distance(),0));
-                        break;
-                    }
-                }
-
-            }
-    }
-    */
 }
 
 void GameScene::spriteSelected(QGraphicsSceneMouseEvent* event, Sprite *sprite) {
